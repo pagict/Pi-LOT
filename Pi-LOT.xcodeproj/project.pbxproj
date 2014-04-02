@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9F2A49618EBF21C0084FCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49518EBF21C0084FCE6 /* Foundation.framework */; };
+		E9F2A49818EBF21C0084FCE6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49718EBF21C0084FCE6 /* CoreGraphics.framework */; };
+		E9F2A49A18EBF21C0084FCE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49918EBF21C0084FCE6 /* UIKit.framework */; };
+		E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */; };
+		E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4A118EBF21C0084FCE6 /* main.m */; };
+		E9F2A4A618EBF21C0084FCE6 /* PiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4A518EBF21C0084FCE6 /* PiAppDelegate.m */; };
+		E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */; };
+		E9F2A4AC18EBF21C0084FCE6 /* PiFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */; };
+		E9F2A4AF18EBF21C0084FCE6 /* PiSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */; };
+		E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */; };
+		E9F2A4B818EBF21C0084FCE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */; };
+		E9F2A4B918EBF21C0084FCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49518EBF21C0084FCE6 /* Foundation.framework */; };
+		E9F2A4BA18EBF21C0084FCE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49918EBF21C0084FCE6 /* UIKit.framework */; };
+		E9F2A4C218EBF21C0084FCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */; };
+		E9F2A4C418EBF21C0084FCE6 /* Pi_LOTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9F2A4BB18EBF21C0084FCE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9F2A48A18EBF21C0084FCE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9F2A49118EBF21C0084FCE6;
+			remoteInfo = "Pi-LOT";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-LOT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F2A49518EBF21C0084FCE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9F2A49718EBF21C0084FCE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E9F2A49918EBF21C0084FCE6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E9F2A49D18EBF21C0084FCE6 /* Pi-LOT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pi-LOT-Info.plist"; sourceTree = "<group>"; };
+		E9F2A49F18EBF21C0084FCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9F2A4A118EBF21C0084FCE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9F2A4A318EBF21C0084FCE6 /* Pi-LOT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pi-LOT-Prefix.pch"; sourceTree = "<group>"; };
+		E9F2A4A418EBF21C0084FCE6 /* PiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PiAppDelegate.h; sourceTree = "<group>"; };
+		E9F2A4A518EBF21C0084FCE6 /* PiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiAppDelegate.m; sourceTree = "<group>"; };
+		E9F2A4A818EBF21C0084FCE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9F2A4AA18EBF21C0084FCE6 /* PiFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PiFirstViewController.h; sourceTree = "<group>"; };
+		E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiFirstViewController.m; sourceTree = "<group>"; };
+		E9F2A4AD18EBF21C0084FCE6 /* PiSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PiSecondViewController.h; sourceTree = "<group>"; };
+		E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiSecondViewController.m; sourceTree = "<group>"; };
+		E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pi-LOTTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E9F2A4BF18EBF21C0084FCE6 /* Pi-LOTTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pi-LOTTests-Info.plist"; sourceTree = "<group>"; };
+		E9F2A4C118EBF21C0084FCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pi_LOTTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9F2A48F18EBF21C0084FCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A49818EBF21C0084FCE6 /* CoreGraphics.framework in Frameworks */,
+				E9F2A49A18EBF21C0084FCE6 /* UIKit.framework in Frameworks */,
+				E9F2A49618EBF21C0084FCE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F2A4B318EBF21C0084FCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4B818EBF21C0084FCE6 /* XCTest.framework in Frameworks */,
+				E9F2A4BA18EBF21C0084FCE6 /* UIKit.framework in Frameworks */,
+				E9F2A4B918EBF21C0084FCE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9F2A48918EBF21C0084FCE6 = {
+			isa = PBXGroup;
+			children = (
+				E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */,
+				E9F2A4BD18EBF21C0084FCE6 /* Pi-LOTTests */,
+				E9F2A49418EBF21C0084FCE6 /* Frameworks */,
+				E9F2A49318EBF21C0084FCE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9F2A49318EBF21C0084FCE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */,
+				E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9F2A49418EBF21C0084FCE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A49518EBF21C0084FCE6 /* Foundation.framework */,
+				E9F2A49718EBF21C0084FCE6 /* CoreGraphics.framework */,
+				E9F2A49918EBF21C0084FCE6 /* UIKit.framework */,
+				E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A4A418EBF21C0084FCE6 /* PiAppDelegate.h */,
+				E9F2A4A518EBF21C0084FCE6 /* PiAppDelegate.m */,
+				E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */,
+				E9F2A4AA18EBF21C0084FCE6 /* PiFirstViewController.h */,
+				E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */,
+				E9F2A4AD18EBF21C0084FCE6 /* PiSecondViewController.h */,
+				E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */,
+				E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */,
+				E9F2A49C18EBF21C0084FCE6 /* Supporting Files */,
+			);
+			path = "Pi-LOT";
+			sourceTree = "<group>";
+		};
+		E9F2A49C18EBF21C0084FCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A49D18EBF21C0084FCE6 /* Pi-LOT-Info.plist */,
+				E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */,
+				E9F2A4A118EBF21C0084FCE6 /* main.m */,
+				E9F2A4A318EBF21C0084FCE6 /* Pi-LOT-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9F2A4BD18EBF21C0084FCE6 /* Pi-LOTTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */,
+				E9F2A4BE18EBF21C0084FCE6 /* Supporting Files */,
+			);
+			path = "Pi-LOTTests";
+			sourceTree = "<group>";
+		};
+		E9F2A4BE18EBF21C0084FCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A4BF18EBF21C0084FCE6 /* Pi-LOTTests-Info.plist */,
+				E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9F2A49118EBF21C0084FCE6 /* Pi-LOT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9F2A4C718EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOT" */;
+			buildPhases = (
+				E9F2A48E18EBF21C0084FCE6 /* Sources */,
+				E9F2A48F18EBF21C0084FCE6 /* Frameworks */,
+				E9F2A49018EBF21C0084FCE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pi-LOT";
+			productName = "Pi-LOT";
+			productReference = E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9F2A4B518EBF21C0084FCE6 /* Pi-LOTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9F2A4CA18EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOTTests" */;
+			buildPhases = (
+				E9F2A4B218EBF21C0084FCE6 /* Sources */,
+				E9F2A4B318EBF21C0084FCE6 /* Frameworks */,
+				E9F2A4B418EBF21C0084FCE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9F2A4BC18EBF21C0084FCE6 /* PBXTargetDependency */,
+			);
+			name = "Pi-LOTTests";
+			productName = "Pi-LOTTests";
+			productReference = E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9F2A48A18EBF21C0084FCE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Pi;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = pagict;
+				TargetAttributes = {
+					E9F2A4B518EBF21C0084FCE6 = {
+						TestTargetID = E9F2A49118EBF21C0084FCE6;
+					};
+				};
+			};
+			buildConfigurationList = E9F2A48D18EBF21C0084FCE6 /* Build configuration list for PBXProject "Pi-LOT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9F2A48918EBF21C0084FCE6;
+			productRefGroup = E9F2A49318EBF21C0084FCE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9F2A49118EBF21C0084FCE6 /* Pi-LOT */,
+				E9F2A4B518EBF21C0084FCE6 /* Pi-LOTTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9F2A49018EBF21C0084FCE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */,
+				E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
+				E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F2A4B418EBF21C0084FCE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4C218EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9F2A48E18EBF21C0084FCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4AC18EBF21C0084FCE6 /* PiFirstViewController.m in Sources */,
+				E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */,
+				E9F2A4A618EBF21C0084FCE6 /* PiAppDelegate.m in Sources */,
+				E9F2A4AF18EBF21C0084FCE6 /* PiSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F2A4B218EBF21C0084FCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4C418EBF21C0084FCE6 /* Pi_LOTTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9F2A4BC18EBF21C0084FCE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9F2A49118EBF21C0084FCE6 /* Pi-LOT */;
+			targetProxy = E9F2A4BB18EBF21C0084FCE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2A49F18EBF21C0084FCE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2A4A818EBF21C0084FCE6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2A4C118EBF21C0084FCE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9F2A4C518EBF21C0084FCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E9F2A4C618EBF21C0084FCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9F2A4C818EBF21C0084FCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
+				INFOPLIST_FILE = "Pi-LOT/Pi-LOT-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E9F2A4C918EBF21C0084FCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
+				INFOPLIST_FILE = "Pi-LOT/Pi-LOT-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E9F2A4CB18EBF21C0084FCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pi-LOTTests/Pi-LOTTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E9F2A4CC18EBF21C0084FCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
+				INFOPLIST_FILE = "Pi-LOTTests/Pi-LOTTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9F2A48D18EBF21C0084FCE6 /* Build configuration list for PBXProject "Pi-LOT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9F2A4C518EBF21C0084FCE6 /* Debug */,
+				E9F2A4C618EBF21C0084FCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9F2A4C718EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9F2A4C818EBF21C0084FCE6 /* Debug */,
+				E9F2A4C918EBF21C0084FCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E9F2A4CA18EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9F2A4CB18EBF21C0084FCE6 /* Debug */,
+				E9F2A4CC18EBF21C0084FCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9F2A48A18EBF21C0084FCE6 /* Project object */;
+}
