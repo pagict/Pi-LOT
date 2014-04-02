@@ -17,22 +17,7 @@
 		E9F2A4AC18EBF21C0084FCE6 /* PiFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */; };
 		E9F2A4AF18EBF21C0084FCE6 /* PiSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */; };
 		E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */; };
-		E9F2A4B818EBF21C0084FCE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */; };
-		E9F2A4B918EBF21C0084FCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49518EBF21C0084FCE6 /* Foundation.framework */; };
-		E9F2A4BA18EBF21C0084FCE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49918EBF21C0084FCE6 /* UIKit.framework */; };
-		E9F2A4C218EBF21C0084FCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */; };
-		E9F2A4C418EBF21C0084FCE6 /* Pi_LOTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E9F2A4BB18EBF21C0084FCE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9F2A48A18EBF21C0084FCE6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9F2A49118EBF21C0084FCE6;
-			remoteInfo = "Pi-LOT";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-LOT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +36,7 @@
 		E9F2A4AD18EBF21C0084FCE6 /* PiSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PiSecondViewController.h; sourceTree = "<group>"; };
 		E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiSecondViewController.m; sourceTree = "<group>"; };
 		E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pi-LOTTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E9F2A4BF18EBF21C0084FCE6 /* Pi-LOTTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pi-LOTTests-Info.plist"; sourceTree = "<group>"; };
-		E9F2A4C118EBF21C0084FCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pi_LOTTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9F2A4B318EBF21C0084FCE6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9F2A4B818EBF21C0084FCE6 /* XCTest.framework in Frameworks */,
-				E9F2A4BA18EBF21C0084FCE6 /* UIKit.framework in Frameworks */,
-				E9F2A4B918EBF21C0084FCE6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */,
-				E9F2A4BD18EBF21C0084FCE6 /* Pi-LOTTests */,
 				E9F2A49418EBF21C0084FCE6 /* Frameworks */,
 				E9F2A49318EBF21C0084FCE6 /* Products */,
 			);
@@ -96,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */,
-				E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,24 +108,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E9F2A4BD18EBF21C0084FCE6 /* Pi-LOTTests */ = {
-			isa = PBXGroup;
-			children = (
-				E9F2A4C318EBF21C0084FCE6 /* Pi_LOTTests.m */,
-				E9F2A4BE18EBF21C0084FCE6 /* Supporting Files */,
-			);
-			path = "Pi-LOTTests";
-			sourceTree = "<group>";
-		};
-		E9F2A4BE18EBF21C0084FCE6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9F2A4BF18EBF21C0084FCE6 /* Pi-LOTTests-Info.plist */,
-				E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,24 +128,6 @@
 			productReference = E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E9F2A4B518EBF21C0084FCE6 /* Pi-LOTTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9F2A4CA18EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOTTests" */;
-			buildPhases = (
-				E9F2A4B218EBF21C0084FCE6 /* Sources */,
-				E9F2A4B318EBF21C0084FCE6 /* Frameworks */,
-				E9F2A4B418EBF21C0084FCE6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9F2A4BC18EBF21C0084FCE6 /* PBXTargetDependency */,
-			);
-			name = "Pi-LOTTests";
-			productName = "Pi-LOTTests";
-			productReference = E9F2A4B618EBF21C0084FCE6 /* Pi-LOTTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,11 +137,6 @@
 				CLASSPREFIX = Pi;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = pagict;
-				TargetAttributes = {
-					E9F2A4B518EBF21C0084FCE6 = {
-						TestTargetID = E9F2A49118EBF21C0084FCE6;
-					};
-				};
 			};
 			buildConfigurationList = E9F2A48D18EBF21C0084FCE6 /* Build configuration list for PBXProject "Pi-LOT" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,7 +152,6 @@
 			projectRoot = "";
 			targets = (
 				E9F2A49118EBF21C0084FCE6 /* Pi-LOT */,
-				E9F2A4B518EBF21C0084FCE6 /* Pi-LOTTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,14 +164,6 @@
 				E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */,
 				E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
 				E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9F2A4B418EBF21C0084FCE6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9F2A4C218EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,23 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9F2A4B218EBF21C0084FCE6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9F2A4C418EBF21C0084FCE6 /* Pi_LOTTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E9F2A4BC18EBF21C0084FCE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9F2A49118EBF21C0084FCE6 /* Pi-LOT */;
-			targetProxy = E9F2A4BB18EBF21C0084FCE6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */ = {
@@ -295,14 +198,6 @@
 				E9F2A4A818EBF21C0084FCE6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9F2A4C018EBF21C0084FCE6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9F2A4C118EBF21C0084FCE6 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -404,46 +299,6 @@
 			};
 			name = Release;
 		};
-		E9F2A4CB18EBF21C0084FCE6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pi-LOTTests/Pi-LOTTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		E9F2A4CC18EBF21C0084FCE6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pi-LOT/Pi-LOT-Prefix.pch";
-				INFOPLIST_FILE = "Pi-LOTTests/Pi-LOTTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,14 +316,6 @@
 			buildConfigurations = (
 				E9F2A4C818EBF21C0084FCE6 /* Debug */,
 				E9F2A4C918EBF21C0084FCE6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		E9F2A4CA18EBF21C0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOTTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9F2A4CB18EBF21C0084FCE6 /* Debug */,
-				E9F2A4CC18EBF21C0084FCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
