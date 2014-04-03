@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeiboAPI.h"
 
-@interface PiAppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface PiAppDelegate : UIResponder <UIApplicationDelegate> 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) PiWeibo *weibo;
 @end
 

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Pi-LOT.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E9F2A4EC18EC1C9A0084FCE6"
+               BuildableName = "Pi-LOT Tests.xctest"
+               BlueprintName = "Pi-LOT Tests"
+               ReferencedContainer = "container:Pi-LOT.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

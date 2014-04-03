@@ -17,7 +17,27 @@
 		E9F2A4AC18EBF21C0084FCE6 /* PiFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */; };
 		E9F2A4AF18EBF21C0084FCE6 /* PiSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */; };
 		E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */; };
+		E9F2A4CF18EBF8240084FCE6 /* PiSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4CE18EBF8240084FCE6 /* PiSignInViewController.m */; };
+		E9F2A4D218EBFB3C0084FCE6 /* PiWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4D118EBFB3C0084FCE6 /* PiWeibo.m */; };
+		E9F2A4D618EBFB7C0084FCE6 /* PiWeiboUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4D518EBFB7C0084FCE6 /* PiWeiboUser.m */; };
+		E9F2A4DB18EC18630084FCE6 /* PiConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4DA18EC18630084FCE6 /* PiConnector.m */; };
+		E9F2A4EE18EC1C9A0084FCE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */; };
+		E9F2A4EF18EC1C9A0084FCE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49518EBF21C0084FCE6 /* Foundation.framework */; };
+		E9F2A4F018EC1C9A0084FCE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2A49918EBF21C0084FCE6 /* UIKit.framework */; };
+		E9F2A4F618EC1C9A0084FCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F2A4F418EC1C9A0084FCE6 /* InfoPlist.strings */; };
+		E9F2A4F818EC1C9A0084FCE6 /* Pi_LOT_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A4F718EC1C9A0084FCE6 /* Pi_LOT_Tests.m */; };
+		E9F2A50118EC2D640084FCE6 /* PiNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2A50018EC2D640084FCE6 /* PiNavigationViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9F2A4FA18EC1C9A0084FCE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9F2A48A18EBF21C0084FCE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9F2A49118EBF21C0084FCE6;
+			remoteInfo = "Pi-LOT";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-LOT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +57,22 @@
 		E9F2A4AE18EBF21C0084FCE6 /* PiSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiSecondViewController.m; sourceTree = "<group>"; };
 		E9F2A4B018EBF21C0084FCE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9F2A4B718EBF21C0084FCE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E9F2A4CD18EBF8240084FCE6 /* PiSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiSignInViewController.h; sourceTree = "<group>"; };
+		E9F2A4CE18EBF8240084FCE6 /* PiSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiSignInViewController.m; sourceTree = "<group>"; };
+		E9F2A4D018EBFB3C0084FCE6 /* PiWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PiWeibo.h; path = "Pi-LOT/PiWeibo.h"; sourceTree = "<group>"; };
+		E9F2A4D118EBFB3C0084FCE6 /* PiWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiWeibo.m; path = "Pi-LOT/PiWeibo.m"; sourceTree = "<group>"; };
+		E9F2A4D418EBFB7C0084FCE6 /* PiWeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PiWeiboUser.h; path = "Pi-LOT/PiWeiboUser.h"; sourceTree = "<group>"; };
+		E9F2A4D518EBFB7C0084FCE6 /* PiWeiboUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiWeiboUser.m; path = "Pi-LOT/PiWeiboUser.m"; sourceTree = "<group>"; };
+		E9F2A4D918EC18630084FCE6 /* PiConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PiConnector.h; path = "Pi-LOT/PiConnector.h"; sourceTree = "<group>"; };
+		E9F2A4DA18EC18630084FCE6 /* PiConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiConnector.m; path = "Pi-LOT/PiConnector.m"; sourceTree = "<group>"; };
+		E9F2A4ED18EC1C9A0084FCE6 /* Pi-LOT Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pi-LOT Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F2A4F318EC1C9A0084FCE6 /* Pi-LOT Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pi-LOT Tests-Info.plist"; sourceTree = "<group>"; };
+		E9F2A4F518EC1C9A0084FCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9F2A4F718EC1C9A0084FCE6 /* Pi_LOT_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pi_LOT_Tests.m; sourceTree = "<group>"; };
+		E9F2A4F918EC1C9A0084FCE6 /* Pi-LOT Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pi-LOT Tests-Prefix.pch"; sourceTree = "<group>"; };
+		E9F2A4FF18EC2D640084FCE6 /* PiNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiNavigationViewController.h; sourceTree = "<group>"; };
+		E9F2A50018EC2D640084FCE6 /* PiNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiNavigationViewController.m; sourceTree = "<group>"; };
+		E9F2A50218EC468F0084FCE6 /* WeiboAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboAPI.h; path = "Pi-LOT/WeiboAPI.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,13 +86,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9F2A4EA18EC1C9A0084FCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4EE18EC1C9A0084FCE6 /* XCTest.framework in Frameworks */,
+				E9F2A4F018EC1C9A0084FCE6 /* UIKit.framework in Frameworks */,
+				E9F2A4EF18EC1C9A0084FCE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		E9F2A48918EBF21C0084FCE6 = {
 			isa = PBXGroup;
 			children = (
+				E9F2A4D318EBFB550084FCE6 /* Weibo */,
 				E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */,
+				E9F2A4F118EC1C9A0084FCE6 /* Pi-LOT Tests */,
 				E9F2A49418EBF21C0084FCE6 /* Frameworks */,
 				E9F2A49318EBF21C0084FCE6 /* Products */,
 			);
@@ -66,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */,
+				E9F2A4ED18EC1C9A0084FCE6 /* Pi-LOT Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +135,11 @@
 			children = (
 				E9F2A4A418EBF21C0084FCE6 /* PiAppDelegate.h */,
 				E9F2A4A518EBF21C0084FCE6 /* PiAppDelegate.m */,
+				E9F2A4FF18EC2D640084FCE6 /* PiNavigationViewController.h */,
+				E9F2A50018EC2D640084FCE6 /* PiNavigationViewController.m */,
 				E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */,
+				E9F2A4CD18EBF8240084FCE6 /* PiSignInViewController.h */,
+				E9F2A4CE18EBF8240084FCE6 /* PiSignInViewController.m */,
 				E9F2A4AA18EBF21C0084FCE6 /* PiFirstViewController.h */,
 				E9F2A4AB18EBF21C0084FCE6 /* PiFirstViewController.m */,
 				E9F2A4AD18EBF21C0084FCE6 /* PiSecondViewController.h */,
@@ -104,6 +157,39 @@
 				E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */,
 				E9F2A4A118EBF21C0084FCE6 /* main.m */,
 				E9F2A4A318EBF21C0084FCE6 /* Pi-LOT-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9F2A4D318EBFB550084FCE6 /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A50218EC468F0084FCE6 /* WeiboAPI.h */,
+				E9F2A4D018EBFB3C0084FCE6 /* PiWeibo.h */,
+				E9F2A4D118EBFB3C0084FCE6 /* PiWeibo.m */,
+				E9F2A4D418EBFB7C0084FCE6 /* PiWeiboUser.h */,
+				E9F2A4D518EBFB7C0084FCE6 /* PiWeiboUser.m */,
+				E9F2A4D918EC18630084FCE6 /* PiConnector.h */,
+				E9F2A4DA18EC18630084FCE6 /* PiConnector.m */,
+			);
+			name = Weibo;
+			sourceTree = "<group>";
+		};
+		E9F2A4F118EC1C9A0084FCE6 /* Pi-LOT Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A4F718EC1C9A0084FCE6 /* Pi_LOT_Tests.m */,
+				E9F2A4F218EC1C9A0084FCE6 /* Supporting Files */,
+			);
+			path = "Pi-LOT Tests";
+			sourceTree = "<group>";
+		};
+		E9F2A4F218EC1C9A0084FCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2A4F318EC1C9A0084FCE6 /* Pi-LOT Tests-Info.plist */,
+				E9F2A4F418EC1C9A0084FCE6 /* InfoPlist.strings */,
+				E9F2A4F918EC1C9A0084FCE6 /* Pi-LOT Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -128,6 +214,24 @@
 			productReference = E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E9F2A4EC18EC1C9A0084FCE6 /* Pi-LOT Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9F2A4FC18EC1C9A0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOT Tests" */;
+			buildPhases = (
+				E9F2A4E918EC1C9A0084FCE6 /* Sources */,
+				E9F2A4EA18EC1C9A0084FCE6 /* Frameworks */,
+				E9F2A4EB18EC1C9A0084FCE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9F2A4FB18EC1C9A0084FCE6 /* PBXTargetDependency */,
+			);
+			name = "Pi-LOT Tests";
+			productName = "Pi-LOT Tests";
+			productReference = E9F2A4ED18EC1C9A0084FCE6 /* Pi-LOT Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -137,6 +241,11 @@
 				CLASSPREFIX = Pi;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = pagict;
+				TargetAttributes = {
+					E9F2A4EC18EC1C9A0084FCE6 = {
+						TestTargetID = E9F2A49118EBF21C0084FCE6;
+					};
+				};
 			};
 			buildConfigurationList = E9F2A48D18EBF21C0084FCE6 /* Build configuration list for PBXProject "Pi-LOT" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -152,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				E9F2A49118EBF21C0084FCE6 /* Pi-LOT */,
+				E9F2A4EC18EC1C9A0084FCE6 /* Pi-LOT Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +277,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9F2A4EB18EC1C9A0084FCE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4F618EC1C9A0084FCE6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -175,13 +293,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9F2A4AC18EBF21C0084FCE6 /* PiFirstViewController.m in Sources */,
+				E9F2A4CF18EBF8240084FCE6 /* PiSignInViewController.m in Sources */,
 				E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */,
+				E9F2A4D218EBFB3C0084FCE6 /* PiWeibo.m in Sources */,
+				E9F2A4DB18EC18630084FCE6 /* PiConnector.m in Sources */,
+				E9F2A4D618EBFB7C0084FCE6 /* PiWeiboUser.m in Sources */,
 				E9F2A4A618EBF21C0084FCE6 /* PiAppDelegate.m in Sources */,
+				E9F2A50118EC2D640084FCE6 /* PiNavigationViewController.m in Sources */,
 				E9F2A4AF18EBF21C0084FCE6 /* PiSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9F2A4E918EC1C9A0084FCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F2A4F818EC1C9A0084FCE6 /* Pi_LOT_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9F2A4FB18EC1C9A0084FCE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9F2A49118EBF21C0084FCE6 /* Pi-LOT */;
+			targetProxy = E9F2A4FA18EC1C9A0084FCE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E9F2A49E18EBF21C0084FCE6 /* InfoPlist.strings */ = {
@@ -198,6 +337,14 @@
 				E9F2A4A818EBF21C0084FCE6 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9F2A4F418EC1C9A0084FCE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2A4F518EC1C9A0084FCE6 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -299,6 +446,46 @@
 			};
 			name = Release;
 		};
+		E9F2A4FD18EC1C9A0084FCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT Tests/Pi-LOT Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pi-LOT Tests/Pi-LOT Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E9F2A4FE18EC1C9A0084FCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pi-LOT.app/Pi-LOT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pi-LOT Tests/Pi-LOT Tests-Prefix.pch";
+				INFOPLIST_FILE = "Pi-LOT Tests/Pi-LOT Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -316,6 +503,14 @@
 			buildConfigurations = (
 				E9F2A4C818EBF21C0084FCE6 /* Debug */,
 				E9F2A4C918EBF21C0084FCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E9F2A4FC18EC1C9A0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOT Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9F2A4FD18EC1C9A0084FCE6 /* Debug */,
+				E9F2A4FE18EC1C9A0084FCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

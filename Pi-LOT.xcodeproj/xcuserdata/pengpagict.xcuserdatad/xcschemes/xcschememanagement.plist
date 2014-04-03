@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>connectTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>E9F2A4B518EBF21C0084FCE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9F2A4DF18EC1C7B0084FCE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9F2A4EC18EC1C9A0084FCE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,12 +7,23 @@
 //
 
 #import "PiAppDelegate.h"
+#import "PiWeibo.h"
+#import "PiSignInViewController.h"
+#import "PiNavigationViewController.h"
+
 
 @implementation PiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // self.weibo = [[PiWeibo alloc] init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if (!self.weibo || !self.weibo.isAuthenticated) {
+        self.weibo = [[PiWeibo alloc] init];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiSignInViewController"];
+    } else
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiNavigationViewController"];
     return YES;
 }
 							
