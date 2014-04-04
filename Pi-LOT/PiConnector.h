@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PiConnector : NSObject
-+ (NSURLRequest*)connectURL:(NSString*)urlString parameters:(NSDictionary*)dict;
++ (NSURLRequest*)connectionURL:(NSString*)urlString parameters:(NSDictionary*)dict;
 @end

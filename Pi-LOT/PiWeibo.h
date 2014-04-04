@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PiWeiboUser.h"
+#import "WeiboModels.h"
 
 @interface PiWeibo : NSObject
 @property BOOL isAuthenticated;
@@ -15,4 +15,7 @@
 @property (strong, nonatomic) NSString* accessToken;
 
 - (void)userShow:(PiWeiboUser*)user;
+- (NSURLRequest*)requestForAuthorize;
+- (NSDictionary*)dictionaryOfAccessToken;
+- (NSArray*)updateTweets;
 @end

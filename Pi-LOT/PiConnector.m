@@ -9,7 +9,7 @@
 #import "PiConnector.h"
 
 @implementation PiConnector
-+ (NSURLRequest*)connectURL:(NSString *)urlString parameters:(NSDictionary *)dict {
++ (NSURLRequest*)connectionURL:(NSString *)urlString parameters:(NSDictionary *)dict {
     NSURLRequest* request;
     NSMutableString* newUrlString = [urlString mutableCopy];
 

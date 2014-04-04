@@ -24,6 +24,11 @@
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiSignInViewController"];
     } else
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiNavigationViewController"];
+#ifdef DEBUG
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiNavigationViewController"];
+    self.weibo.accessToken = @"2.00qwNKqBGdpFQD5f494ae8ae0OlKjU";
+    self.weibo.isAuthenticated = YES;
+#endif
     return YES;
 }
 							
