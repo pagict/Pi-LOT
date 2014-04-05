@@ -28,12 +28,23 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    // controller setting
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.navigationItem.title = @"微博";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                             target:nil
+                                             action:nil];
+
+    // table view cell setting
     UINib *nib = [UINib nibWithNibName:@"PiTimeLineTableViewCell"
                                 bundle:nil];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"reuseIdentifier"];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+
+    // class variables setting
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
 

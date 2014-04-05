@@ -9,7 +9,7 @@
 #import "PiAppDelegate.h"
 #import "PiWeibo.h"
 #import "PiSignInViewController.h"
-#import "PiNavigationViewController.h"
+
 
 
 @implementation PiAppDelegate
@@ -23,9 +23,9 @@
         self.weibo = [[PiWeibo alloc] init];
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiSignInViewController"];
     } else
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiNavigationViewController"];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiTabBarController"];
 #ifdef DEBUG
-    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiNavigationViewController"];
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"PiTabBarController"];
     self.weibo.accessToken = @"2.00qwNKqBGdpFQD5f494ae8ae0OlKjU";
     self.weibo.isAuthenticated = YES;
 #endif
