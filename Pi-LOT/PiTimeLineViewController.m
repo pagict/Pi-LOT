@@ -32,6 +32,8 @@
                                 bundle:nil];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"reuseIdentifier"];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
 
@@ -71,10 +73,15 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
-}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    PiTimeLineTableViewCell* cell = (PiTimeLineTableViewCell*)[self.tableView
+//                                                        cellForRowAtIndexPath:indexPath];
+//    if (cell) {
+//        return cell.height;
+//    }
+    return 354;
+}
 
 /*
 // Override to support conditional editing of the table view.

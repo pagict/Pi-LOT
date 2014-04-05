@@ -35,17 +35,39 @@
     self.sourceField.text = tweet.source;
 
 //    ((UITextView*)(self.tweetView)).text = tweet.text;
+//    self.tweetView.frame.size.height = self.textHeight;
     self.tweetView.text = tweet.text;
-    self.repostCntField.text = [NSString stringWithFormat:@"reposts(%d)", tweet.repostCount];
-    self.commentsCntField.text = [NSString stringWithFormat:@"comments(%d)", tweet.commentCount];
+    CGRect frame = self.tweetView.frame;
+    frame.size.height = self.textHeight;
+    self.tweetView.frame = frame;
+    self.repostCntField.text = [NSString stringWithFormat:@"转发(%d)", tweet.repostCount];
+    self.commentsCntField.text = [NSString stringWithFormat:@"评论(%d)", tweet.commentCount];
 
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:tweet.user.profileImageURL]
                                        queue:[NSOperationQueue currentQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               self.imageView.image = [UIImage imageWithData:data];
+                               UIImage *img = [UIImage imageWithData:data];
+                               self.profileImageView.contentMode = UIViewContentModeScaleToFill;
+                               self.profileImageView.image = img;
                            }];
 
     
+}
+
+- (CGFloat)textHeight {
+    NSDictionary *attri = [self.tweetView.attributedText attributesAtIndex:0
+                                                            effectiveRange:NULL];
+
+    CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
+    int charactersEachLine = 280/*label width */ / (fontSize.width / self.tweetView.text.length);
+    int lines = self.tweetView.text.length / charactersEachLine + (self.tweetView.text.length % charactersEachLine?1:0);
+
+    return lines*fontSize.height/* font height*/;
+}
+
+- (CGFloat)height {
+    CGFloat otherComponentHeight = 353 - 240;
+    return otherComponentHeight + self.textHeight;
 }
 
 @end

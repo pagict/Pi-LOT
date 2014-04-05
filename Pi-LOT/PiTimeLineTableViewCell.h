@@ -10,5 +10,6 @@
 #import "PiWeibo.h"
 
 @interface PiTimeLineTableViewCell : UITableViewCell
+@property (readonly) CGFloat   height;
 - (void)setCellFrom:(PiTweet*)tweet;
 @end
