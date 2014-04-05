@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PiWeibo.h"
 
 @interface PiTimeLineTableViewCell : UITableViewCell
-
+- (void)setCellFrom:(PiTweet*)tweet;
 @end

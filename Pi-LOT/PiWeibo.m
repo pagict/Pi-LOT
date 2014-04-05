@@ -85,7 +85,7 @@
     NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
     NSURLRequest *request = [PiConnector connectionURL:urlString
                                             parameters:@{@"access_token": self.accessToken}];
-    [NSURLConnection sendAsynchronousRequest:request
+   /* [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue currentQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
@@ -97,7 +97,19 @@
                                    [modelTweets addObject:piTweet];
                                }
 
-                           }];
+                           }]; */
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:nil
+                                                     error:nil];
+    NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingMutableContainers
+                                                              error:nil];
+    NSArray* tweets = retDict[@"statuses"];
+    for (NSDictionary* tweet in tweets) {
+//        PiTweet* piTweet = ;
+        [modelTweets insertObject:[[PiTweet alloc] initWithDictionary:tweet] atIndex:modelTweets.count] ;
+    }
+
     return modelTweets;
 }
 

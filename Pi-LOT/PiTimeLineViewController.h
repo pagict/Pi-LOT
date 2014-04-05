@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "PiWeibo.h"
 
-@interface PiTimeLineViewController : UITableViewController
+@interface PiTimeLineViewController : UITableViewController<UITableViewDelegate>
 @end

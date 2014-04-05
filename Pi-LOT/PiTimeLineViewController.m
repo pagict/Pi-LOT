@@ -13,6 +13,7 @@
 
 @interface PiTimeLineViewController ()
 @property (weak, nonatomic) PiWeibo *weibo;
+@property (strong, nonatomic) NSArray *tweetArray;
 @end
 
 @implementation PiTimeLineViewController
@@ -27,11 +28,14 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:[PiTimeLineTableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
+    UINib *nib = [UINib nibWithNibName:@"PiTimeLineTableViewCell"
+                                bundle:nil];
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:@"reuseIdentifier"];
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
 
-    [self.weibo updateTweets];
+    self.tweetArray = [self.weibo updateTweets];
     
 }
 
@@ -45,26 +49,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return self.tweetArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PiTimeLineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    NSLog(@"%d", indexPath.row);
+    [cell setCellFrom:self.tweetArray[indexPath.row]];
     
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 200;
 }
 
 
