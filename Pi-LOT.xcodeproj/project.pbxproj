@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E951139918F065DB00187EC0 /* Pi-LotApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pi-LotApp.h"; path = "Pi-LOT/Pi-LotApp.h"; sourceTree = "<group>"; };
 		E9F2A49218EBF21C0084FCE6 /* Pi-LOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pi-LOT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F2A49518EBF21C0084FCE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9F2A49718EBF21C0084FCE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +178,7 @@
 			children = (
 				E9F2A4D018EBFB3C0084FCE6 /* PiWeibo.h */,
 				E9F2A4D118EBFB3C0084FCE6 /* PiWeibo.m */,
+				E951139918F065DB00187EC0 /* Pi-LotApp.h */,
 				E9F2A55518EE96460084FCE6 /* Model */,
 				E9F2A4D918EC18630084FCE6 /* PiConnector.h */,
 				E9F2A4DA18EC18630084FCE6 /* PiConnector.m */,
@@ -529,6 +531,7 @@
 				E9F2A4C918EBF21C0084FCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9F2A4FC18EC1C9A0084FCE6 /* Build configuration list for PBXNativeTarget "Pi-LOT Tests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +540,7 @@
 				E9F2A4FE18EC1C9A0084FCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

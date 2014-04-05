@@ -9,10 +9,8 @@
 #import "PiWeibo.h"
 #import "PiConnector.h"
 #import "WeiboModels.h"
+#import "Pi-LotApp.h"
 
-#define kAppKey @"2986209980"
-#define kAppSecret @"20efe02cd1e9e61ebb0ab2bc47cb4953"
-#define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
 #define updateCount 30
 

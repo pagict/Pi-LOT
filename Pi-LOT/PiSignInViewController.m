@@ -7,7 +7,8 @@
 //
 #import "PiAppDelegate.h"
 #import "PiSignInViewController.h"
-
+#import "PiConnector.h"
+#import "Pi-LotApp.h"
 @interface PiSignInViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) PiWeibo*            weibo;
@@ -36,20 +37,20 @@
   shouldStartLoadWithRequest:(NSURLRequest *)request
               navigationType:(UIWebViewNavigationType)navigationType {
     NSRange range = [request.URL.absoluteString rangeOfString:@"code="];
-    if (range.location != NSNotFound) {
+    if (range.location!=NSNotFound) {
         NSString *code = [request.URL.absoluteString substringFromIndex:range.length+range.location];
-
+        self.weibo.code = code;
         NSDictionary *retDict = [self.weibo dictionaryOfAccessToken];
         PiWeiboUser *user = [[PiWeiboUser alloc] init];
         if (retDict[@"uid"]) {
             user.userId = retDict[@"uid"];
-            PiAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-            appDelegate.weibo.isAuthenticated = YES;
-            appDelegate.weibo.code = code;
-            appDelegate.weibo.accessToken = retDict[@"access_token"];
 
-            [appDelegate.weibo userShow:user];
+            self.weibo.isAuthenticated = YES;
+            self.weibo.accessToken = retDict[@"access_token"];
 
+            [self.weibo userShow:user];
+
+            PiAppDelegate  *appDelegate = [[UIApplication sharedApplication] delegate];
             [appDelegate performSelector:@selector(application:didFinishLaunchingWithOptions:) withObject:@{} afterDelay:0];
         }
         return NO;
