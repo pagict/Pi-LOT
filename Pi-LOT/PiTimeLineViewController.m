@@ -75,12 +75,10 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    PiTimeLineTableViewCell* cell = (PiTimeLineTableViewCell*)[self.tableView
-//                                                        cellForRowAtIndexPath:indexPath];
-//    if (cell) {
-//        return cell.height;
-//    }
-    return 354;
+    PiTimeLineTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
+    [cell setCellFrom:self.tweetArray[indexPath.row]];
+
+    return cell.height;
 }
 
 /*
