@@ -32,7 +32,7 @@
     // controller setting
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.navigationItem.title = @"微博";
+    // self.navigationItem.title = @"微博";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
                                              target:nil

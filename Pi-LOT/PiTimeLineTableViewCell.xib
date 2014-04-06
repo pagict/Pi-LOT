@@ -32,21 +32,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vha-bL-wef">
-                        <rect key="frame" x="80" y="45" width="94" height="17"/>
+                        <rect key="frame" x="80" y="45" width="86" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="KuQ-6k-bZq"/>
-                            <constraint firstAttribute="width" constant="94" id="OUW-X0-crt"/>
-                            <constraint firstAttribute="width" constant="94" id="tIM-Jg-5uC"/>
+                            <constraint firstAttribute="width" constant="86" id="OUW-X0-crt"/>
+                            <constraint firstAttribute="width" constant="86" id="tIM-Jg-5uC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHs-Zf-icd">
-                        <rect key="frame" x="182" y="45" width="118" height="17"/>
+                        <rect key="frame" x="174" y="45" width="126" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="118" id="ihe-NR-uTp"/>
+                            <constraint firstAttribute="width" constant="126" id="ihe-NR-uTp"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="highlightedColor"/>

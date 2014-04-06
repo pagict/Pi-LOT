@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Pi Time Line View Controller-->
+        <!--Pi Time Line View Controller - 微博-->
         <scene sceneID="sM3-pj-4dF">
             <objects>
                 <tableViewController id="dBk-bW-QUe" customClass="PiTimeLineViewController" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             <outlet property="delegate" destination="dBk-bW-QUe" id="YT8-Zw-IyK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gls-73-OgM"/>
+                    <navigationItem key="navigationItem" title="微博" id="uCr-Af-tam"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS9-v0-81y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
