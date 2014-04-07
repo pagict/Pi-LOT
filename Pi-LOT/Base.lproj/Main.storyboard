@@ -33,6 +33,49 @@
             </objects>
             <point key="canvasLocation" x="1179" y="-179"/>
         </scene>
+        <!--Pi Post Tweet View Controller - 新微博-->
+        <scene sceneID="GPf-qY-sTl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sb4-Wy-CWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PiPostTweetViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kp-b4-8hp" customClass="PiPostTweetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WW0-7J-8cJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="BHp-RH-e51"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zNP-c4-QaK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UZd-yu-YPJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="316"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4Kp-b4-8hp" id="Cvb-Dl-L0A"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sB-h0-D3w">
+                                <rect key="frame" x="245" y="295" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="新微博" id="IkP-bg-ftc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="characterCountLabel" destination="0sB-h0-D3w" id="Trm-IS-uli"/>
+                        <outlet property="tweetTextView" destination="UZd-yu-YPJ" id="tGv-WL-f5k"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1704" y="-179"/>
+        </scene>
         <!--Pi Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>

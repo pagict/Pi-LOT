@@ -10,6 +10,7 @@
 #import "PiTimeLineTableViewCell.h"
 #import "PiAppDelegate.h"
 #import "PiWeibo.h"
+#import "PiPostTweetViewController.h"
 
 @interface PiTimeLineViewController ()
 @property (weak, nonatomic) PiWeibo *weibo;
@@ -35,8 +36,8 @@
     // self.navigationItem.title = @"微博";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-                                             target:nil
-                                             action:nil];
+                                             target:self
+                                             action:@selector(compose)];
 
     // table view cell setting
     UINib *nib = [UINib nibWithNibName:@"PiTimeLineTableViewCell"
@@ -56,6 +57,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)compose {
+    PiPostTweetViewController* postTweetViewController = [[UIStoryboard storyboardWithName:@"Main"
+                                                                                    bundle:nil] instantiateViewControllerWithIdentifier:@"PiPostTweetViewController"];
+    [self.navigationController pushViewController:postTweetViewController animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -130,15 +137,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
 }
-*/
+
 
 @end

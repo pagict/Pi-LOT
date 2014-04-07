@@ -18,4 +18,5 @@
 - (NSURLRequest*)requestForAuthorize;
 - (NSDictionary*)dictionaryOfAccessToken;
 - (NSArray*)updateTweets;
+- (void)postTweet:(NSString*)tweetContent;
 @end

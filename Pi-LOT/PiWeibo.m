@@ -111,4 +111,50 @@
     return modelTweets;
 }
 
+- (void)postTweet:(NSString*)tweetContent {
+    if (tweetContent.length <= 140) {
+        NSString* encodedString = [self urlencode:tweetContent];
+        NSMutableURLRequest *request = [[PiConnector connectionURL:@"https://api.weibo.com/2/statuses/update.json"
+                                                parameters:@{@"access_token": self.accessToken,
+                                                             @"status": encodedString}] mutableCopy];
+
+        request.HTTPMethod = @"POST";
+        
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:NSJSONReadingAllowFragments
+                                                                                             error:nil];
+                               }];
+//        NSData* data = [NSURLConnection sendSynchronousRequest:request
+//                                             returningResponse:nil
+//                                                         error:nil];
+//        NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+//                                                                options:NSJSONReadingAllowFragments
+//                                                                  error:nil];
+    }
+}
+
+
+- (NSString *)urlencode:(NSString*)input{
+    NSMutableString *output = [NSMutableString string];
+    const unsigned char *source = (const unsigned char *)[input UTF8String];
+    int sourceLen = strlen((const char *)source);
+    for (int i = 0; i < sourceLen; ++i) {
+        const unsigned char thisChar = source[i];
+        if (thisChar == ' '){
+            [output appendString:@"+"];
+        } else if (thisChar == '.' || thisChar == '-' || thisChar == '_' || thisChar == '~' ||
+                   (thisChar >= 'a' && thisChar <= 'z') ||
+                   (thisChar >= 'A' && thisChar <= 'Z') ||
+                   (thisChar >= '0' && thisChar <= '9')) {
+            [output appendFormat:@"%c", thisChar];
+        } else {
+            [output appendFormat:@"%%%02X", thisChar];
+        }
+    }
+    return output;
+}
+
 @end

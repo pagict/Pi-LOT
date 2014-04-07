@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "PiWeiboUser.h"
 
+#define kTWEET_CHARACTER_LIMIT   140
+
 @interface PiTweet : NSObject
 @property (strong, nonatomic) NSString*     createTime;
 @property (strong, nonatomic) NSString*     text;
