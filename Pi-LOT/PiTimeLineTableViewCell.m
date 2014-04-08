@@ -29,7 +29,8 @@
     // Configure the view for the selected state
 }
 
-- (void)setCellFrom:(PiTweet*)tweet {
+- (void)setCellFrom:(PiMessage*)message {
+    PiTweet* tweet = (PiTweet*)message;
     self.userNameField.text = tweet.user.screenName;
     self.tweetTimeField.text = tweet.createTime;
     self.sourceField.text = tweet.source;

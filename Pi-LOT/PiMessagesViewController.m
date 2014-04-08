@@ -7,24 +7,21 @@
 //
 
 #import "PiMessagesViewController.h"
-#define kCommentCellIdentifier          @"commentCellIdentifier"
+#import "PiWeibo.h"
+#import "PiAppDelegate.h"
+#import "PiCommentTableViewCell.h"
+
+//#define kCommentCellIdentifier          @"commentCellIdentifier"
 #define kPrivateMessageCellIdentifier   @"privateMessageCellIdentifier"
 #define kAtMeCellIdentifier             @"atMeCellIdentifier"
+static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
 
 @interface PiMessagesViewController ()
-
+@property (strong, nonatomic) PiWeibo* weibo;
+@property (strong, nonatomic) NSArray* messageArray;
 @end
 
 @implementation PiMessagesViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -35,6 +32,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    // local variable, singleton PiWeibo instance
+    PiAppDelegate* appDelegate = (PiAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.weibo = appDelegate.weibo;
+    self.messageArray = [self.weibo comments];
+
+    // table view customized cell register
+    UINib* nib = [UINib nibWithNibName:@"PiCommentTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:kCommentCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,28 +54,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.messageArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    NSLog(@"%d", indexPath.row);
+    PiCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCommentCellIdentifier forIndexPath:indexPath];
+    [cell setCellFrom:self.messageArray[indexPath.row]];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

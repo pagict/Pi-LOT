@@ -7,12 +7,13 @@
 //
 
 #import "PiConnector.h"
+#import "NSString+Weibo.h"
 
 @implementation PiConnector
 + (NSURLRequest*)requestGETwithURL:(NSString *)urlString parameters:(NSDictionary *)dict {
     NSMutableURLRequest* request;
 
-    NSMutableString* newUrlString = (NSMutableString*)[self formatURLString:urlString];
+    NSMutableString* newUrlString = (NSMutableString*)[urlString formatURLString];
     [newUrlString appendString:[self stringFromParameterDictionary:dict]];
 
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newUrlString]];
@@ -21,7 +22,7 @@
 }
 
 + (NSURLRequest*)requestPOSTwithURL:(NSString*)urlString parameters:(NSDictionary*)dict {
-    NSMutableString* newUrlString = (NSMutableString*)[self formatURLString:urlString];
+    NSMutableString* newUrlString = (NSMutableString*)[urlString formatURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newUrlString]];
     request.HTTPMethod = @"POST";
     request.HTTPBody = [[self stringFromParameterDictionary:dict] dataUsingEncoding:NSStringEncodingConversionAllowLossy];
@@ -29,15 +30,7 @@
     return request;
 }
 
-+ (NSString*)formatURLString:(NSString*)urlString {
-    NSMutableString* newUrlString = [urlString mutableCopy];
 
-    if (![[newUrlString substringFromIndex:newUrlString.length-1] compare:@"/"]) {
-        [newUrlString deleteCharactersInRange: NSMakeRange(newUrlString.length-1, 1)];
-    }
-    [newUrlString appendString:@"?"];
-    return newUrlString;
-}
 
 + (NSString*)stringFromParameterDictionary:(NSDictionary*)dict {
     NSMutableString* paramterString = [NSMutableString string];

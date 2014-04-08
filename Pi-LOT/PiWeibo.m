@@ -103,7 +103,7 @@
     NSArray* tweets = retDict[@"statuses"];
     for (NSDictionary* tweet in tweets) {
 //        PiTweet* piTweet = ;
-        [modelTweets insertObject:[[PiTweet alloc] initWithDictionary:tweet] atIndex:modelTweets.count] ;
+        [modelTweets insertObject:[[PiTweet alloc] initWithJsonDictionary:tweet] atIndex:modelTweets.count] ;
     }
 
     return modelTweets;
@@ -132,6 +132,24 @@
 //                                                                options:NSJSONReadingAllowFragments
 //                                                                  error:nil];
     }
+}
+
+- (NSArray*)comments {
+    NSMutableArray* commentsArray = [[NSMutableArray alloc] init];
+    NSURLRequest* request = [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/timeline.json"
+                                                parameters:@{@"access_token" : self.accessToken}];
+    NSData* data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:nil
+                                                     error:nil];
+    NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingAllowFragments
+                                                              error:nil];
+    NSArray* metaComment = retDict[@"comments"];
+    for (NSDictionary* commentDict in metaComment) {
+        [commentsArray addObject:[[PiComment alloc] initWithJsonDictionary:commentDict]];
+    }
+
+     return commentsArray;
 }
 
 

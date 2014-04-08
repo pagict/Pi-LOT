@@ -11,5 +11,6 @@
 
 #import "PiWeiboUser.h"
 #import "PiTweet.h"
+#import "PiComment.h"
 
 #endif

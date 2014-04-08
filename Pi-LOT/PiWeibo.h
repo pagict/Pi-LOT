@@ -19,4 +19,5 @@
 - (NSDictionary*)dictionaryOfAccessToken;
 - (NSArray*)updateTweets;
 - (void)postTweet:(NSString*)tweetContent;
+- (NSArray*)comments;
 @end

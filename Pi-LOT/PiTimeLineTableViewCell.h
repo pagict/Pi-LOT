@@ -11,5 +11,5 @@
 
 @interface PiTimeLineTableViewCell : UITableViewCell
 @property (readonly) CGFloat   height;
-- (void)setCellFrom:(PiTweet*)tweet;
+- (void)setCellFrom:(PiMessage*)tweet;
 @end

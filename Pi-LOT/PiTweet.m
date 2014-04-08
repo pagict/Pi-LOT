@@ -7,10 +7,11 @@
 //
 
 #import "PiTweet.h"
+#import "NSString+Weibo.h"
 
 @implementation PiTweet
 
-- (id)initWithDictionary:(NSDictionary *)dict {
+- (id)initWithJsonDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         self.createTime = dict[@"created_at"];
         self.text       = dict[@"text"];
@@ -22,11 +23,7 @@
         self.commentCount = [dict[@"comments_count"] intValue];
 
         NSString* sourceString = dict[@"source"];
-        NSRange startRange = [sourceString rangeOfString:@">"];
-        NSRange endRange = [sourceString rangeOfString:@"<"
-                                               options: NSBackwardsSearch];
-
-        self.source = [sourceString substringWithRange:NSMakeRange(startRange.location+1, endRange.location - startRange.location-1)];
+        self.source = [sourceString source];
     }
     return self;
 }

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "PiWeiboUser.h"
+#import "PiMessage.h"
 
 #define kTWEET_CHARACTER_LIMIT   140
 
-@interface PiTweet : NSObject
+@interface PiTweet : PiMessage
 @property (strong, nonatomic) NSString*     createTime;
 @property (strong, nonatomic) NSString*     text;
 @property (strong, nonatomic) NSString*     source;
@@ -21,5 +22,5 @@
 @property int                               repostCount;
 @property int                               commentCount;
 
-- (id)initWithDictionary:(NSDictionary*)dict;
+- (id)initWithJsonDictionary:(NSDictionary*)dict;
 @end

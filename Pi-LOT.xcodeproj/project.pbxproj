@@ -34,6 +34,11 @@
 		E9F4AB9F18F2DEED0021DDD8 /* messageLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F4AB9E18F2DEED0021DDD8 /* messageLogo@2x.png */; };
 		E9F4ABA118F2DEF20021DDD8 /* messageLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F4ABA018F2DEF20021DDD8 /* messageLogo.png */; };
 		E9F4ABA418F2E06B0021DDD8 /* PiMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABA318F2E06B0021DDD8 /* PiMessagesViewController.m */; };
+		E9F4ABB218F3E52D0021DDD8 /* PiComment.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABB118F3E52D0021DDD8 /* PiComment.m */; };
+		E9F4ABB518F425F20021DDD8 /* NSString+Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABB418F425F20021DDD8 /* NSString+Weibo.m */; };
+		E9F4ABB818F42C660021DDD8 /* PiMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABB718F42C660021DDD8 /* PiMessage.m */; };
+		E9F4ABBC18F42CB90021DDD8 /* PiCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */; };
+		E9F4ABBD18F42CB90021DDD8 /* PiCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +95,15 @@
 		E9F4ABA018F2DEF20021DDD8 /* messageLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageLogo.png; sourceTree = "<group>"; };
 		E9F4ABA218F2E06B0021DDD8 /* PiMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiMessagesViewController.h; sourceTree = "<group>"; };
 		E9F4ABA318F2E06B0021DDD8 /* PiMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiMessagesViewController.m; sourceTree = "<group>"; };
+		E9F4ABB018F3E52D0021DDD8 /* PiComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PiComment.h; path = "Pi-LOT/PiComment.h"; sourceTree = "<group>"; };
+		E9F4ABB118F3E52D0021DDD8 /* PiComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiComment.m; path = "Pi-LOT/PiComment.m"; sourceTree = "<group>"; };
+		E9F4ABB318F425F20021DDD8 /* NSString+Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Weibo.h"; sourceTree = "<group>"; };
+		E9F4ABB418F425F20021DDD8 /* NSString+Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Weibo.m"; sourceTree = "<group>"; };
+		E9F4ABB618F42C660021DDD8 /* PiMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PiMessage.h; path = "Pi-LOT/PiMessage.h"; sourceTree = "<group>"; };
+		E9F4ABB718F42C660021DDD8 /* PiMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiMessage.m; path = "Pi-LOT/PiMessage.m"; sourceTree = "<group>"; };
+		E9F4ABB918F42CB90021DDD8 /* PiCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiCommentTableViewCell.h; sourceTree = "<group>"; };
+		E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiCommentTableViewCell.m; sourceTree = "<group>"; };
+		E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PiCommentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +164,9 @@
 		E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */ = {
 			isa = PBXGroup;
 			children = (
+				E9F4ABB918F42CB90021DDD8 /* PiCommentTableViewCell.h */,
+				E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */,
+				E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */,
 				E9F4ABA218F2E06B0021DDD8 /* PiMessagesViewController.h */,
 				E9F4ABA318F2E06B0021DDD8 /* PiMessagesViewController.m */,
 				E9F2A50E18ED92550084FCE6 /* PiTimeLineViewController.h */,
@@ -188,6 +205,8 @@
 		E9F2A4D318EBFB550084FCE6 /* Weibo */ = {
 			isa = PBXGroup;
 			children = (
+				E9F4ABB318F425F20021DDD8 /* NSString+Weibo.h */,
+				E9F4ABB418F425F20021DDD8 /* NSString+Weibo.m */,
 				E9F2A4D018EBFB3C0084FCE6 /* PiWeibo.h */,
 				E9F2A4D118EBFB3C0084FCE6 /* PiWeibo.m */,
 				E951139918F065DB00187EC0 /* Pi-LotApp.h */,
@@ -225,6 +244,10 @@
 				E9F2A4D518EBFB7C0084FCE6 /* PiWeiboUser.m */,
 				E9F2A50318ED89E40084FCE6 /* PiTweet.h */,
 				E9F2A50418ED89E40084FCE6 /* PiTweet.m */,
+				E9F4ABB018F3E52D0021DDD8 /* PiComment.h */,
+				E9F4ABB118F3E52D0021DDD8 /* PiComment.m */,
+				E9F4ABB618F42C660021DDD8 /* PiMessage.h */,
+				E9F4ABB718F42C660021DDD8 /* PiMessage.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,6 +332,7 @@
 				E9F4ABA118F2DEF20021DDD8 /* messageLogo.png in Resources */,
 				E951139D18F07F6200187EC0 /* weiboLogo@2x.png in Resources */,
 				E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */,
+				E9F4ABBD18F42CB90021DDD8 /* PiCommentTableViewCell.xib in Resources */,
 				E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */,
 				E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
 				E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */,
@@ -332,12 +356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F4ABB818F42C660021DDD8 /* PiMessage.m in Sources */,
 				E9F2A4CF18EBF8240084FCE6 /* PiSignInViewController.m in Sources */,
 				E9F2A51018ED92550084FCE6 /* PiTimeLineViewController.m in Sources */,
 				E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */,
 				E9498E4C18F15952006A1AD1 /* PiPostTweetViewController.m in Sources */,
 				E9F2A4D218EBFB3C0084FCE6 /* PiWeibo.m in Sources */,
 				E9F4ABA418F2E06B0021DDD8 /* PiMessagesViewController.m in Sources */,
+				E9F4ABB218F3E52D0021DDD8 /* PiComment.m in Sources */,
+				E9F4ABB518F425F20021DDD8 /* NSString+Weibo.m in Sources */,
+				E9F4ABBC18F42CB90021DDD8 /* PiCommentTableViewCell.m in Sources */,
 				E9F2A4DB18EC18630084FCE6 /* PiConnector.m in Sources */,
 				E9F2A4D618EBFB7C0084FCE6 /* PiWeiboUser.m in Sources */,
 				E9F2A50518ED89E40084FCE6 /* PiTweet.m in Sources */,
