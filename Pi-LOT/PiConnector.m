@@ -9,24 +9,45 @@
 #import "PiConnector.h"
 
 @implementation PiConnector
-+ (NSURLRequest*)connectionURL:(NSString *)urlString parameters:(NSDictionary *)dict {
-    NSURLRequest* request;
++ (NSURLRequest*)requestGETwithURL:(NSString *)urlString parameters:(NSDictionary *)dict {
+    NSMutableURLRequest* request;
+
+    NSMutableString* newUrlString = (NSMutableString*)[self formatURLString:urlString];
+    [newUrlString appendString:[self stringFromParameterDictionary:dict]];
+
+    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newUrlString]];
+    request.HTTPMethod = @"GET";
+    return request;
+}
+
++ (NSURLRequest*)requestPOSTwithURL:(NSString*)urlString parameters:(NSDictionary*)dict {
+    NSMutableString* newUrlString = (NSMutableString*)[self formatURLString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:newUrlString]];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = [[self stringFromParameterDictionary:dict] dataUsingEncoding:NSStringEncodingConversionAllowLossy];
+
+    return request;
+}
+
++ (NSString*)formatURLString:(NSString*)urlString {
     NSMutableString* newUrlString = [urlString mutableCopy];
 
     if (![[newUrlString substringFromIndex:newUrlString.length-1] compare:@"/"]) {
         [newUrlString deleteCharactersInRange: NSMakeRange(newUrlString.length-1, 1)];
     }
     [newUrlString appendString:@"?"];
+    return newUrlString;
+}
 
++ (NSString*)stringFromParameterDictionary:(NSDictionary*)dict {
+    NSMutableString* paramterString = [NSMutableString string];
     NSArray *allKey = [dict allKeys];
     for (NSString* key in allKey) {
         NSString *p = [NSString stringWithFormat:@"%@=%@&", key, [dict objectForKey:key]];
-        [newUrlString appendString:p];
+        [paramterString appendString:p];
     }
-    // delete the last '&' character
-    [newUrlString deleteCharactersInRange:NSMakeRange(newUrlString.length-1, 1)];
-
-    request = [NSURLRequest requestWithURL:[NSURL URLWithString:newUrlString]];
-    return request;
+    // delete last '&' character
+    [paramterString deleteCharactersInRange:NSMakeRange(paramterString.length-1, 1)];
+    return paramterString;
 }
 @end

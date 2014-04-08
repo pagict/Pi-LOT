@@ -33,11 +33,10 @@
     }
 
     if (user.userId) {
-        NSMutableURLRequest *request = [[PiConnector connectionURL:@"https://api.weibo.com/2/users/show.json"
-                                                    parameters:@{@"uid": user.userId,
-                                                                 @"access_token": self.accessToken,
-                                                                 @"appkey": kAppKey}] mutableCopy];
-        [request setHTTPMethod:@"GET"];
+        NSMutableURLRequest *request = [[PiConnector requestGETwithURL:@"https://api.weibo.com/2/users/show.json"
+                                                            parameters:@{@"uid": user.userId,
+                                                                         @"access_token": self.accessToken,
+                                                                         @"appkey": kAppKey}] mutableCopy];
 
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
@@ -51,22 +50,21 @@
 
 - (NSURLRequest*)requestForAuthorize {
     NSString *urlString = @"https://api.weibo.com/oauth2/authorize";
-    NSURLRequest *request = [PiConnector connectionURL:urlString
-                                         parameters:@{@"client_id": kAppKey,
-                                                      @"reponse_type": @"code",
-                                                      @"redirect_uri": kRedirectURL,
-                                                      @"display": @"mobile"}];
+    NSURLRequest *request = [PiConnector requestGETwithURL:urlString
+                                                parameters:@{@"client_id": kAppKey,
+                                                             @"reponse_type": @"code",
+                                                             @"redirect_uri": kRedirectURL,
+                                                             @"display": @"mobile"}];
     return request;
 }
 
 - (NSDictionary*)dictionaryOfAccessToken {
-    NSMutableURLRequest *request = [[PiConnector connectionURL:@"https://api.weibo.com/oauth2/access_token"
+    NSMutableURLRequest *request = [[PiConnector requestPOSTwithURL:@"https://api.weibo.com/oauth2/access_token"
                                                  parameters:@{@"client_id": kAppKey,
                                                               @"client_secret": kAppSecret,
                                                               @"grant_type": @"authorization_code",
                                                               @"code": self.code,
                                                               @"redirect_uri": kRedirectURL}] mutableCopy];
-    [request setHTTPMethod:@"POST"];
     NSData *data = [NSURLConnection sendSynchronousRequest:request
                                          returningResponse:nil
                                                      error:nil];
@@ -81,8 +79,8 @@
     __block NSMutableArray* modelTweets = [[NSMutableArray alloc] initWithCapacity:updateCount];
 
     NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
-    NSURLRequest *request = [PiConnector connectionURL:urlString
-                                            parameters:@{@"access_token": self.accessToken}];
+    NSURLRequest *request = [PiConnector requestGETwithURL:urlString
+                                                parameters:@{@"access_token": self.accessToken}];
    /* [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue currentQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -114,18 +112,18 @@
 - (void)postTweet:(NSString*)tweetContent {
     if (tweetContent.length <= 140) {
         NSString* encodedString = [self urlencode:tweetContent];
-        NSMutableURLRequest *request = [[PiConnector connectionURL:@"https://api.weibo.com/2/statuses/update.json"
-                                                parameters:@{@"access_token": self.accessToken,
-                                                             @"status": encodedString}] mutableCopy];
+        NSURLRequest* request = [PiConnector requestPOSTwithURL:@"https://api.weibo.com/2/statuses/update.json"
+                                                            parameters:@{@"status": encodedString,
+                                                                         @"access_token": self.accessToken}];
 
-        request.HTTPMethod = @"POST";
-        
         [NSURLConnection sendAsynchronousRequest:request
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
                                    NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
                                                                                            options:NSJSONReadingAllowFragments
                                                                                              error:nil];
+#pragma unused(retDict)
                                }];
 //        NSData* data = [NSURLConnection sendSynchronousRequest:request
 //                                             returningResponse:nil
