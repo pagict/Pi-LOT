@@ -57,7 +57,7 @@
 
 - (CGFloat)textHeight {
     NSDictionary *attri = [self.tweetView.attributedText attributesAtIndex:0
-                                                            effectiveRange:NULL];
+                                                            effectiveRange:nil];
 
     CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
     int charactersEachLine = 280/*label width */ / (fontSize.width / self.tweetView.text.length);

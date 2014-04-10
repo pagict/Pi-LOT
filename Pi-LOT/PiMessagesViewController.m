@@ -18,6 +18,7 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
 
 @interface PiMessagesViewController ()
 @property (strong, nonatomic) PiWeibo* weibo;
+@property (strong, nonatomic) NSString* cellIdentifier;
 @property (strong, nonatomic) NSArray* messageArray;
 @end
 
@@ -37,11 +38,16 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
     PiAppDelegate* appDelegate = (PiAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
     self.messageArray = [self.weibo comments];
+    self.cellIdentifier = kCommentCellIdentifier;
 
     // table view customized cell register
-    UINib* nib = [UINib nibWithNibName:@"PiCommentTableViewCell" bundle:nil];
+    UINib* nib = [UINib nibWithNibName:@"PiCommentTableViewCell"
+                                bundle:nil];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:kCommentCellIdentifier];
+    self.tableView.rowHeight = 208;
+    // table view delegate setting
+    self.tableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,13 +74,18 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%d", indexPath.row);
-    PiCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCommentCellIdentifier forIndexPath:indexPath];
+    PiCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
     [cell setCellFrom:self.messageArray[indexPath.row]];
     
     return cell;
 }
 
-
+#pragma mark - table view delegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PiCommentTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    [cell setCellFrom:self.messageArray[indexPath.row]];
+    return cell.height;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

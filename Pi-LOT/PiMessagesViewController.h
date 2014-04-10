@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PiMessagesViewController : UITableViewController
+@interface PiMessagesViewController : UITableViewController<UITableViewDelegate>
 
 @end

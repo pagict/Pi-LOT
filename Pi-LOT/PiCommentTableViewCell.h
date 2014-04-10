@@ -10,8 +10,6 @@
 #import "WeiboModels.h"
 
 @interface PiCommentTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
-@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
-@property (weak, nonatomic) IBOutlet UITextView *quotedTextView;
+@property (readonly, nonatomic) CGFloat height;
 - (void)setCellFrom:(PiMessage*)message;
 @end

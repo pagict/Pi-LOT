@@ -4,50 +4,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="commentTextView" destination="EgO-n6-tls" id="USO-sJ-h0j"/>
-                <outlet property="quotedTextView" destination="cF8-lb-YJm" id="58t-QM-OIz"/>
-                <outlet property="userProfileImageView" destination="RzW-aS-m8p" id="qzd-HC-Ib3"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCellIdentifier" rowHeight="209" id="KGk-i7-Jjw" customClass="PiCommentTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCellIdentifier" rowHeight="207" id="KGk-i7-Jjw" customClass="PiCommentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="207"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <userGuides>
-                    <userLayoutGuide location="187" affinity="minX"/>
-                </userGuides>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-aS-m8p">
-                        <rect key="frame" x="10" y="10" width="56" height="56"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-aS-m8p" userLabel="userImage">
+                        <rect key="frame" x="10" y="10" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="56" id="37e-ij-1Ty"/>
-                            <constraint firstAttribute="height" constant="56" id="k5c-6C-gbc"/>
+                            <constraint firstAttribute="width" constant="40" id="6HV-Zw-7LP"/>
+                            <constraint firstAttribute="height" constant="40" id="ZDM-XA-XrH"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgO-n6-tls">
-                        <rect key="frame" x="74" y="10" width="226" height="66"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htx-F4-xsx" userLabel="NameLabel">
+                        <rect key="frame" x="58" y="10" width="242" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="242" id="6p2-yf-kyM"/>
+                            <constraint firstAttribute="height" constant="30" id="Jhk-SG-RA3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvS-Yz-1Ev" userLabel="commentView">
+                        <rect key="frame" x="58" y="49" width="242" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="66" id="Q4C-IU-jSL"/>
-                            <constraint firstAttribute="width" constant="226" id="SD8-PJ-SZ4"/>
+                            <constraint firstAttribute="height" priority="250" constant="60" id="8zq-w2-X9V"/>
+                            <constraint firstAttribute="width" constant="242" id="LmA-pe-o8j"/>
                         </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-lb-YJm">
-                        <rect key="frame" x="74" y="84" width="226" height="104"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cF8-lb-YJm" userLabel="quotedView">
+                        <rect key="frame" x="58" y="117" width="242" height="69"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="226" id="nKz-pl-VXh"/>
+                            <constraint firstAttribute="height" priority="250" constant="69" id="4Pp-hX-fr2"/>
+                            <constraint firstAttribute="width" constant="242" id="g24-hT-hvb"/>
                         </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -55,19 +58,25 @@
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="cF8-lb-YJm" secondAttribute="bottom" constant="20" id="CJE-xM-Cwh"/>
-                    <constraint firstAttribute="trailing" secondItem="EgO-n6-tls" secondAttribute="trailing" constant="20" symbolic="YES" id="D7A-yO-IdF"/>
-                    <constraint firstItem="cF8-lb-YJm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="74" id="IoE-GE-5vg"/>
-                    <constraint firstItem="EgO-n6-tls" firstAttribute="leading" secondItem="RzW-aS-m8p" secondAttribute="trailing" constant="8" symbolic="YES" id="JIM-GG-Hr5"/>
-                    <constraint firstItem="EgO-n6-tls" firstAttribute="leading" secondItem="cF8-lb-YJm" secondAttribute="leading" id="RVS-pU-7Uv"/>
-                    <constraint firstItem="cF8-lb-YJm" firstAttribute="top" secondItem="EgO-n6-tls" secondAttribute="bottom" constant="8" symbolic="YES" id="X6V-Sn-sf2"/>
-                    <constraint firstItem="EgO-n6-tls" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cxj-LI-q8k"/>
-                    <constraint firstItem="EgO-n6-tls" firstAttribute="trailing" secondItem="cF8-lb-YJm" secondAttribute="trailing" id="f4r-39-Fs8"/>
-                    <constraint firstItem="RzW-aS-m8p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jYx-Dw-MJg"/>
-                    <constraint firstItem="RzW-aS-m8p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vPl-x0-dvW"/>
-                    <constraint firstItem="EgO-n6-tls" firstAttribute="top" secondItem="RzW-aS-m8p" secondAttribute="top" id="xmG-NX-57o"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="trailing" secondItem="mvS-Yz-1Ev" secondAttribute="trailing" id="83l-of-YBd"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="trailing" secondItem="cF8-lb-YJm" secondAttribute="trailing" id="Ito-UY-y1f"/>
+                    <constraint firstItem="RzW-aS-m8p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="M2D-eG-SEn"/>
+                    <constraint firstItem="mvS-Yz-1Ev" firstAttribute="top" secondItem="Htx-F4-xsx" secondAttribute="bottom" constant="9" id="PkZ-xA-OsB"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="leading" secondItem="mvS-Yz-1Ev" secondAttribute="leading" id="Rrf-YC-KVh"/>
+                    <constraint firstItem="RzW-aS-m8p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TBn-Vl-gO7"/>
+                    <constraint firstItem="cF8-lb-YJm" firstAttribute="top" secondItem="mvS-Yz-1Ev" secondAttribute="bottom" constant="8" id="hlZ-Gh-jLs"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="leading" secondItem="RzW-aS-m8p" secondAttribute="trailing" constant="8" id="jgs-CW-qJn"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="leading" secondItem="cF8-lb-YJm" secondAttribute="leading" id="kRW-By-QWb"/>
+                    <constraint firstItem="Htx-F4-xsx" firstAttribute="top" secondItem="RzW-aS-m8p" secondAttribute="top" id="kot-Nn-j5r"/>
+                    <constraint firstAttribute="bottom" secondItem="cF8-lb-YJm" secondAttribute="bottom" constant="20" id="m1Y-v1-NF8"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentTextView" destination="mvS-Yz-1Ev" id="Xal-7W-2kX"/>
+                <outlet property="commentUserLabel" destination="Htx-F4-xsx" id="KtC-A0-K5q"/>
+                <outlet property="quotedTextView" destination="cF8-lb-YJm" id="r9V-yu-Gay"/>
+                <outlet property="userProfileImageView" destination="RzW-aS-m8p" id="Rrg-a9-Lgi"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
