@@ -9,13 +9,13 @@
 #import "PiTimeLineTableViewCell.h"
 
 @interface PiTimeLineTableViewCell ()
-@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
-@property (strong, nonatomic) IBOutlet UILabel *userNameField;
-@property (strong, nonatomic) IBOutlet UILabel *sourceField;
-@property (strong, nonatomic) IBOutlet UILabel *tweetTimeField;
-@property (strong, nonatomic) IBOutlet UILabel *tweetView;
-@property (strong, nonatomic) IBOutlet UILabel *repostCntField;
-@property (strong, nonatomic) IBOutlet UILabel *commentsCntField;
+@property (strong, nonatomic) UIImageView *profileImageView;
+@property (strong, nonatomic) UILabel *userNameField;
+@property (strong, nonatomic) UILabel *sourceField;
+@property (strong, nonatomic) UILabel *tweetTimeField;
+@property (strong, nonatomic) UILabel *tweetView;
+@property (strong, nonatomic) UILabel *repostCntField;
+@property (strong, nonatomic) UILabel *commentsCntField;
 
 @end
 
@@ -37,22 +37,28 @@
 
         CGRect userFrame = CGRectMake(80, 10, 220, 30);
         self.userNameField = [[UILabel alloc] initWithFrame:userFrame];
+        self.userNameField.font = [UIFont systemFontOfSize:20];
         [self.contentView addSubview:self.userNameField];
 
         self.sourceField = [[UILabel alloc] initWithFrame:CGRectMake(80, 45, 86, 17)];
+        self.sourceField.font = [UIFont systemFontOfSize:11];
         [self.contentView addSubview:self.sourceField];
 
         self.tweetTimeField = [[UILabel alloc] initWithFrame:CGRectMake(174, 45, 126, 17)];
+        self.tweetTimeField.font = [UIFont systemFontOfSize:11];
         [self.contentView addSubview:self.tweetTimeField];
 
         self.tweetView = [[UILabel alloc] initWithFrame:CGRectMake(20, 71, 280, 240)];
         self.tweetView.numberOfLines = 9;
+        self.tweetView.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:self.tweetView];
 
         self.commentsCntField = [[UILabel alloc] initWithFrame:CGRectMake(113, 319, 94, 22)];
+        self.commentsCntField.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:self.commentsCntField];
 
         self.repostCntField = [[UILabel alloc] initWithFrame:CGRectMake(215, 319, 85, 22)];
+        self.repostCntField.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:self.repostCntField];
     }
     return self;

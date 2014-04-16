@@ -55,16 +55,14 @@
                                            self.userProfileImageView.contentMode = UIViewContentModeScaleToFill;
                                            self.userProfileImageView.image = [UIImage imageWithData:data];
                                        }];
-    self.commentUserLabel.text = comment.commentUser.screenName;
     self.commentTextView.text = comment.commentContent;
     self.quotedTextView.text =comment.quotedContent;
+    self.commentUserLabel.text = comment.commentUser.screenName;
 
     // set views size
     CGFloat commentViewHeight = [self heightOfView:self.commentTextView];
-    CGFloat x = self.commentUserLabel.frame.origin.x;
-    CGFloat y = self.commentUserLabel.frame.origin.y + self.commentUserLabel.frame.size.height + kStandardAquaContraintVerticalSpace;
-    CGFloat width = self.commentUserLabel.frame.size.width;
-    CGRect commentViewFrame = CGRectMake(x, y, width, commentViewHeight);
+    CGRect commentViewFrame = self.commentTextView.frame;
+    commentViewFrame.size.height = commentViewHeight;
     self.commentTextView.frame = commentViewFrame;
 
     CGFloat quotedViewHeight = [self heightOfView:self.quotedTextView];
