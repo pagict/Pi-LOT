@@ -13,10 +13,10 @@
 #define kStandardAquaContraintVerticalMargin 10
 #define kStandardAquaContraintHorizontalMargin 10
 @interface PiCommentTableViewCell ()
-@property (strong, nonatomic) IBOutlet UIImageView *userProfileImageView;
-@property (strong, nonatomic) IBOutlet UITextView *commentTextView;
-@property (strong, nonatomic) IBOutlet UITextView *quotedTextView;
-@property (strong, nonatomic) IBOutlet UILabel *commentUserLabel;
+@property (strong, nonatomic) UIImageView *userProfileImageView;
+@property (strong, nonatomic) UITextView *commentTextView;
+@property (strong, nonatomic) UITextView *quotedTextView;
+@property (strong, nonatomic) UILabel *commentUserLabel;
 @end
 
 @implementation PiCommentTableViewCell
@@ -35,10 +35,13 @@
 
         self.commentTextView = [[UITextView alloc] initWithFrame:
                                 CGRectMake(58, 49, 242, 60)];
+        self.commentTextView.editable = NO;
         [self.contentView addSubview:self.commentTextView];
 
         self.quotedTextView = [[UITextView alloc] initWithFrame:
                                CGRectMake(58, 117, 242, 69)];
+        self.quotedTextView.backgroundColor = [UIColor grayColor];
+        self.quotedTextView.editable = NO;
         [self.contentView addSubview:self.quotedTextView];
     }
     return self;
@@ -82,7 +85,7 @@
                                                       effectiveRange:nil];
     CGSize textSize = [textView.text sizeWithAttributes:attri];
     int lineCount = textSize.width / textView.frame.size.width + 1;
-    return lineCount * textSize.height;
+    return lineCount * textSize.height + 20;
 }
 
 - (CGFloat)height {

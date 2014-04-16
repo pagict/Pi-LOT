@@ -60,7 +60,7 @@
                                                             effectiveRange:nil];
 
     CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
-    int charactersEachLine = 280/*label width */ / (fontSize.width / self.tweetView.text.length);
+    int charactersEachLine = self.tweetView.frame.size.width /*label width */ / (fontSize.width / self.tweetView.text.length);
     int lines = self.tweetView.text.length / charactersEachLine + 1;
 
     return lines*fontSize.height/* font height*/;
