@@ -55,14 +55,16 @@
                                            self.userProfileImageView.contentMode = UIViewContentModeScaleToFill;
                                            self.userProfileImageView.image = [UIImage imageWithData:data];
                                        }];
+    self.commentUserLabel.text = comment.commentUser.screenName;
     self.commentTextView.text = comment.commentContent;
     self.quotedTextView.text =comment.quotedContent;
-    self.commentUserLabel.text = comment.commentUser.screenName;
 
     // set views size
     CGFloat commentViewHeight = [self heightOfView:self.commentTextView];
-    CGRect commentViewFrame = self.commentTextView.frame;
-    commentViewFrame.size.height = commentViewHeight;
+    CGFloat x = self.commentUserLabel.frame.origin.x;
+    CGFloat y = self.commentUserLabel.frame.origin.y + self.commentUserLabel.frame.size.height + kStandardAquaContraintVerticalSpace;
+    CGFloat width = self.commentUserLabel.frame.size.width;
+    CGRect commentViewFrame = CGRectMake(x, y, width, commentViewHeight);
     self.commentTextView.frame = commentViewFrame;
 
     CGFloat quotedViewHeight = [self heightOfView:self.quotedTextView];
@@ -70,7 +72,28 @@
     quotedViewFrame.origin.y = self.commentTextView.frame.origin.y + self.commentTextView.frame.size.height + kStandardAquaContraintVerticalSpace;
     quotedViewFrame.size.height = quotedViewHeight;
     self.quotedTextView.frame = quotedViewFrame;
+
+    CGRect contentRect = self.contentView.frame;
+    contentRect.size.height = self.height;
+    self.contentView.frame = contentRect;
+
+
+    /*CGRect rect = self.userProfileImageView.frame;
+    NSLog(@"userProfileImageView {origin.x = %f, origin.y = %f\n\tsize.width = %f, size.height = %f}\n", rect.origin.x,rect.origin.y,rect.size.width, rect.size.height);
+    rect = self.commentUserLabel.frame;
+    NSLog(@"commentUserLabel {origin.x = %f, origin.y = %f\n\tsize.width = %f, size.height = %f}\n", rect.origin.x,rect.origin.y,rect.size.width, rect.size.height);
+    rect = self.commentTextView.frame;
+    NSLog(@"commentTextView {origin.x = %f, origin.y = %f\n\tsize.width = %f, size.height = %f}\n", rect.origin.x,rect.origin.y,rect.size.width, rect.size.height);
+    rect = self.quotedTextView.frame;
+    NSLog(@"quotedTextView {origin.x = %f, origin.y = %f\n\tsize.width = %f, size.height = %f}\n", rect.origin.x,rect.origin.y,rect.size.width, rect.size.height); */
 }
+/*
+- (UIView*)contentView {
+    CGRect rect = [super contentView].frame;
+    NSLog(@"{origin.x = %f, origin.y = %f\n\tsize.width = %f, size.height = %f}\n", rect.origin.x,rect.origin.y,rect.size.width, rect.size.height);
+    return [super contentView];
+}
+ */
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

@@ -40,10 +40,8 @@
                                              action:@selector(compose)];
 
     // table view cell setting
-    UINib *nib = [UINib nibWithNibName:@"PiTimeLineTableViewCell"
-                                bundle:nil];
-    [self.tableView registerNib:nib
-         forCellReuseIdentifier:@"reuseIdentifier"];
+    [self.tableView registerClass:[PiTimeLineTableViewCell class]
+           forCellReuseIdentifier:@"reuseIdentifier"];
 
     // class variables setting
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
@@ -93,7 +91,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PiTimeLineTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
+    PiTimeLineTableViewCell* cell = [[tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"] init];
     [cell setCellFrom:self.tweetArray[indexPath.row]];
 
     return cell.height;
