@@ -8,15 +8,41 @@
 
 #import "PiCommentTableViewCell.h"
 
-#define kStandardAquaContraintSpace 8
+#define kStandardAquaContraintVerticalSpace 8
+#define kStandardAquaContraintHorizontalSpace 5
+#define kStandardAquaContraintVerticalMargin 10
+#define kStandardAquaContraintHorizontalMargin 10
 @interface PiCommentTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
-@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
-@property (weak, nonatomic) IBOutlet UITextView *quotedTextView;
-@property (weak, nonatomic) IBOutlet UILabel *commentUserLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *userProfileImageView;
+@property (strong, nonatomic) IBOutlet UITextView *commentTextView;
+@property (strong, nonatomic) IBOutlet UITextView *quotedTextView;
+@property (strong, nonatomic) IBOutlet UILabel *commentUserLabel;
 @end
 
 @implementation PiCommentTableViewCell
+
+- (id)init {
+    if (self = [super init]) {
+        self.userProfileImageView = [[UIImageView alloc] initWithFrame:
+                                     CGRectMake(kStandardAquaContraintHorizontalMargin,
+                                                kStandardAquaContraintVerticalMargin,
+                                                40, 40)];
+        [self.contentView addSubview:self.userProfileImageView];
+
+        self.commentUserLabel = [[UILabel alloc] initWithFrame:
+                                 CGRectMake(58, 10, 242, 30)];
+        [self.contentView addSubview:self.commentUserLabel];
+
+        self.commentTextView = [[UITextView alloc] initWithFrame:
+                                CGRectMake(58, 49, 242, 60)];
+        [self.contentView addSubview:self.commentTextView];
+
+        self.quotedTextView = [[UITextView alloc] initWithFrame:
+                               CGRectMake(58, 117, 242, 69)];
+        [self.contentView addSubview:self.quotedTextView];
+    }
+    return self;
+}
 
 - (void)setCellFrom:(PiMessage *)message {
     // set text and image view
@@ -38,7 +64,7 @@
 
     CGFloat quotedViewHeight = [self heightOfView:self.quotedTextView];
     CGRect quotedViewFrame = self.quotedTextView.frame;
-    quotedViewFrame.origin.y = self.commentTextView.frame.origin.y + self.commentTextView.frame.size.height + kStandardAquaContraintSpace;
+    quotedViewFrame.origin.y = self.commentTextView.frame.origin.y + self.commentTextView.frame.size.height + kStandardAquaContraintVerticalSpace;
     quotedViewFrame.size.height = quotedViewHeight;
     self.quotedTextView.frame = quotedViewFrame;
 }
@@ -60,8 +86,9 @@
 }
 
 - (CGFloat)height {
-    CGFloat otherHeight = 209 - 66 - 104;
-    return otherHeight + self.commentTextView.frame.size.height + self.quotedTextView.frame.size.height;
+//    CGFloat otherHeight = 209 - 66 - 104;
+//    return otherHeight + self.commentTextView.frame.size.height + self.quotedTextView.frame.size.height;
+    return self.quotedTextView.frame.origin.y + self.quotedTextView.frame.size.height + kStandardAquaContraintVerticalMargin;
 }
 
 @end

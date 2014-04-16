@@ -38,7 +38,6 @@
 		E9F4ABB518F425F20021DDD8 /* NSString+Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABB418F425F20021DDD8 /* NSString+Weibo.m */; };
 		E9F4ABB818F42C660021DDD8 /* PiMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABB718F42C660021DDD8 /* PiMessage.m */; };
 		E9F4ABBC18F42CB90021DDD8 /* PiCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */; };
-		E9F4ABBD18F42CB90021DDD8 /* PiCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +102,6 @@
 		E9F4ABB718F42C660021DDD8 /* PiMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PiMessage.m; path = "Pi-LOT/PiMessage.m"; sourceTree = "<group>"; };
 		E9F4ABB918F42CB90021DDD8 /* PiCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiCommentTableViewCell.h; sourceTree = "<group>"; };
 		E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiCommentTableViewCell.m; sourceTree = "<group>"; };
-		E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PiCommentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +164,6 @@
 			children = (
 				E9F4ABB918F42CB90021DDD8 /* PiCommentTableViewCell.h */,
 				E9F4ABBA18F42CB90021DDD8 /* PiCommentTableViewCell.m */,
-				E9F4ABBB18F42CB90021DDD8 /* PiCommentTableViewCell.xib */,
 				E9F4ABA218F2E06B0021DDD8 /* PiMessagesViewController.h */,
 				E9F4ABA318F2E06B0021DDD8 /* PiMessagesViewController.m */,
 				E9F2A50E18ED92550084FCE6 /* PiTimeLineViewController.h */,
@@ -332,7 +329,6 @@
 				E9F4ABA118F2DEF20021DDD8 /* messageLogo.png in Resources */,
 				E951139D18F07F6200187EC0 /* weiboLogo@2x.png in Resources */,
 				E9F2A4B118EBF21C0084FCE6 /* Images.xcassets in Resources */,
-				E9F4ABBD18F42CB90021DDD8 /* PiCommentTableViewCell.xib in Resources */,
 				E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */,
 				E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
 				E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */,

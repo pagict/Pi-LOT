@@ -56,7 +56,7 @@
     if (textView.text.length > 140) {
         [textView deleteBackward];
     }
-    self.characterCountLabel.text = [NSString stringWithFormat:@"%d/%d", textView.text.length, kTWEET_CHARACTER_LIMIT];
+    self.characterCountLabel.text = [NSString stringWithFormat:@"%lu/%d", (unsigned long)textView.text.length, kTWEET_CHARACTER_LIMIT];
 }
 /*
 #pragma mark - Navigation
