@@ -21,6 +21,7 @@
 @property (strong, nonatomic) PiTweet*      retweetedStatus;
 @property int                               repostCount;
 @property int                               commentCount;
+@property (strong, readonly, nonatomic) NSMutableArray*      pictureURLArray;
 
 - (id)initWithJsonDictionary:(NSDictionary*)dict;
 @end

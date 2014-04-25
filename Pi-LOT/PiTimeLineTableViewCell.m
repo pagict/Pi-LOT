@@ -16,7 +16,7 @@
 @property (strong, nonatomic) UILabel *tweetView;
 @property (strong, nonatomic) UILabel *repostCntField;
 @property (strong, nonatomic) UILabel *commentsCntField;
-
+@property (weak, nonatomic)   UIView  *currentBottomMostView;
 @end
 
 @implementation PiTimeLineTableViewCell
@@ -74,12 +74,26 @@
     self.tweetView.text = tweet.text;
     CGRect frame = self.tweetView.frame;
     int tweetViewLines = [self linesOfLabel:self.tweetView];
-    self.tweetView.numberOfLines = tweetViewLines;
+    self.tweetView.numberOfLines = 0;
     self.tweetView.lineBreakMode = NSLineBreakByTruncatingMiddle;
     frame.size.height = [self lineHeightOfLabel:self.tweetView] * tweetViewLines;
     self.tweetView.frame = frame;
     [self.tweetView sizeToFit];
+    self.currentBottomMostView = self.tweetView;
 
+    if (tweet.pictureURLArray) {
+        UIImageView* imageView = [self addPictureViewWithArray:tweet.pictureURLArray];
+        frame = self.currentBottomMostView.frame;
+        CGRect imageViewFrame = imageView.frame;
+        imageViewFrame.origin.x = frame.origin.x;
+        imageViewFrame.origin.y = frame.origin.y + frame.size.height + 5;
+        imageView.frame = imageViewFrame;
+        [self.contentView addSubview:imageView];
+
+        self.currentBottomMostView = imageView;
+    }
+
+    frame = self.currentBottomMostView.frame;
     CGRect repostFrame = self.repostCntField.frame;
     repostFrame.origin.y = frame.origin.y + frame.size.height + 10;
     self.repostCntField.frame = repostFrame;
@@ -89,6 +103,7 @@
     commentFrame.origin.y = repostFrame.origin.y;
     self.commentsCntField.frame = commentFrame;
     self.commentsCntField.text = [NSString stringWithFormat:@"评论(%d)", tweet.commentCount];
+    self.currentBottomMostView = self.commentsCntField;
 
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:tweet.user.profileImageURL]
                                        queue:[NSOperationQueue currentQueue]
@@ -100,24 +115,25 @@
 
     
 }
-//
-//- (CGFloat)textHeight {
-//    NSDictionary *attri = [self.tweetView.attributedText attributesAtIndex:0
-//                                                            effectiveRange:nil];
-//
-//    CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
-//    int charactersEachLine = self.tweetView.frame.size.width /*label width */ / (fontSize.width / self.tweetView.text.length);
-//    int lines = self.tweetView.text.length / charactersEachLine + 1;
-//
-//    return lines*fontSize.height/* font height*/;
-//}
 
+- (UIView*)addPictureViewWithArray:(NSArray*)urlArray {
+    UIImageView*  imageView;
+    NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:urlArray[0]]
+                                         returningResponse:nil
+                                                     error:NULL];
+
+    UIImage *image = [UIImage imageWithData:data];
+    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    imageView.image = image;
+
+    return imageView;
+}
 
 
 - (CGFloat)height {
 //    CGFloat otherComponentHeight = 353 - 240;
 //    return otherComponentHeight + self.textHeight;
-    return self.commentsCntField.frame.origin.y + self.commentsCntField.frame.size.height + 10;
+    return self.currentBottomMostView.frame.origin.y + self.currentBottomMostView.frame.size.height + 10;
 
 }
 
