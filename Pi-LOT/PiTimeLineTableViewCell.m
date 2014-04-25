@@ -81,6 +81,7 @@
     [self.tweetView sizeToFit];
     self.currentBottomMostView = self.tweetView;
 
+    // picture
     if (tweet.pictureURLArray) {
         UIImageView* imageView = [self addPictureViewWithArray:tweet.pictureURLArray];
         frame = self.currentBottomMostView.frame;
@@ -91,6 +92,18 @@
         [self.contentView addSubview:imageView];
 
         self.currentBottomMostView = imageView;
+    }
+
+    // retweet
+    if (tweet.retweetedStatus) {
+        UIView* repostView = [self addRepostViewWithTweet:tweet.retweetedStatus width:280];
+        CGRect repostViewFrame = repostView.frame;
+        repostViewFrame.origin.x = self.currentBottomMostView.frame.origin.x;
+        repostViewFrame.origin.y = self.currentBottomMostView.frame.origin.y + self.currentBottomMostView.frame.size.height+3;
+        repostView.frame = repostViewFrame;
+        [self.contentView addSubview:repostView];
+
+        self.currentBottomMostView = repostView;
     }
 
     frame = self.currentBottomMostView.frame;
@@ -127,6 +140,40 @@
     imageView.image = image;
 
     return imageView;
+}
+
+- (UIView*)addRepostViewWithTweet:(PiTweet*)retweetedMessage width:(CGFloat)width {
+    UIView* repostView = [[UIView alloc] init];
+    repostView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    UILabel* label = [[UILabel alloc] init];
+    /***   label basic setting   ***/
+    label.text = [NSString stringWithFormat:@"@%@:%@", retweetedMessage.user.screenName, retweetedMessage.text];
+    label.numberOfLines = 0;
+    label.font = [UIFont systemFontOfSize:13];
+    /***  label  Frame setting   ****/
+    CGRect labelFrame = label.frame;
+    labelFrame.size.width = width;
+    label.frame = labelFrame;
+    labelFrame.size.height = [self lineHeightOfLabel:label] * [self linesOfLabel:label];
+    label.frame = labelFrame;
+    [label sizeToFit];
+
+    /*** Whole repostView frame setting ***/
+    [repostView addSubview:label];
+    repostView.frame = label.frame;
+    if (retweetedMessage.pictureURLArray) {
+        UIImageView* imageView = [self addPictureViewWithArray:retweetedMessage.pictureURLArray];
+        CGRect imageViewFrame = imageView.frame;
+        imageViewFrame.origin.x = repostView.frame.origin.x;
+        imageViewFrame.origin.y = label.frame.origin.y + label.frame.size.height + 2;
+        imageView.frame = imageViewFrame;
+        /*** add to whole repostView   ***/
+        [repostView addSubview:imageView];
+        CGRect repostFrame = repostView.frame;
+        repostFrame.size.height = imageViewFrame.origin.y + imageViewFrame.size.height + 1;
+        repostView.frame = repostFrame;
+    }
+    return repostView;
 }
 
 
