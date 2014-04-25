@@ -75,10 +75,6 @@
     CGRect frame = self.tweetView.frame;
     int tweetViewLines = [self linesOfLabel:self.tweetView];
     self.tweetView.numberOfLines = tweetViewLines;
-#ifdef DEBUG
-    NSLog(@"%d--",self.tweetView.numberOfLines);
-    self.tweetView.numberOfLines = 9;
-#endif
     self.tweetView.lineBreakMode = NSLineBreakByTruncatingMiddle;
     frame.size.height = [self lineHeightOfLabel:self.tweetView] * tweetViewLines;
     self.tweetView.frame = frame;

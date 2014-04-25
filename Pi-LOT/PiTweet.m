@@ -18,12 +18,14 @@
 //        self.source     = dict[@"source"];
         self.isTruncated= [dict[@"truncated"] boolValue];
         self.user       = [[PiWeiboUser alloc] initWithJsonDictionary: dict[@"user"]];
-        self.retweetedStatus = dict[@"retweeted_status"];
         self.repostCount= [dict[@"reposts_count"] intValue];
         self.commentCount = [dict[@"comments_count"] intValue];
-
         NSString* sourceString = dict[@"source"];
         self.source = [sourceString source];
+        self.retweetedStatus = nil;
+        if (dict[@"retweeted_status"]) {
+            self.retweetedStatus = [[PiTweet alloc] initWithJsonDictionary:dict[@"retweeted_status"]];
+        }
     }
     return self;
 }
