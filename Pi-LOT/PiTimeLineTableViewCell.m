@@ -49,7 +49,6 @@
         [self.contentView addSubview:self.tweetTimeField];
 
         self.tweetView = [[UILabel alloc] initWithFrame:CGRectMake(20, 71, 280, 240)];
-        self.tweetView.numberOfLines = 9;
         self.tweetView.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:self.tweetView];
 
@@ -74,8 +73,16 @@
 //    self.tweetView.frame.size.height = self.textHeight;
     self.tweetView.text = tweet.text;
     CGRect frame = self.tweetView.frame;
-    frame.size.height = self.textHeight;
+    int tweetViewLines = [self linesOfLabel:self.tweetView];
+    self.tweetView.numberOfLines = tweetViewLines;
+#ifdef DEBUG
+    NSLog(@"%d--",self.tweetView.numberOfLines);
+    self.tweetView.numberOfLines = 9;
+#endif
+    self.tweetView.lineBreakMode = NSLineBreakByTruncatingMiddle;
+    frame.size.height = [self lineHeightOfLabel:self.tweetView] * tweetViewLines;
     self.tweetView.frame = frame;
+    [self.tweetView sizeToFit];
 
     CGRect repostFrame = self.repostCntField.frame;
     repostFrame.origin.y = frame.origin.y + frame.size.height + 10;
@@ -97,17 +104,19 @@
 
     
 }
+//
+//- (CGFloat)textHeight {
+//    NSDictionary *attri = [self.tweetView.attributedText attributesAtIndex:0
+//                                                            effectiveRange:nil];
+//
+//    CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
+//    int charactersEachLine = self.tweetView.frame.size.width /*label width */ / (fontSize.width / self.tweetView.text.length);
+//    int lines = self.tweetView.text.length / charactersEachLine + 1;
+//
+//    return lines*fontSize.height/* font height*/;
+//}
 
-- (CGFloat)textHeight {
-    NSDictionary *attri = [self.tweetView.attributedText attributesAtIndex:0
-                                                            effectiveRange:nil];
 
-    CGSize fontSize = [self.tweetView.text sizeWithAttributes:attri];
-    int charactersEachLine = self.tweetView.frame.size.width /*label width */ / (fontSize.width / self.tweetView.text.length);
-    int lines = self.tweetView.text.length / charactersEachLine + 1;
-
-    return lines*fontSize.height/* font height*/;
-}
 
 - (CGFloat)height {
 //    CGFloat otherComponentHeight = 353 - 240;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E932DF8F1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E932DF8E1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m */; };
 		E9498E4C18F15952006A1AD1 /* PiPostTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9498E4B18F15952006A1AD1 /* PiPostTweetViewController.m */; };
 		E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139A18F07F5C00187EC0 /* weiboLogo.png */; };
 		E951139D18F07F6200187EC0 /* weiboLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139C18F07F6200187EC0 /* weiboLogo@2x.png */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E932DF8D1908EBE8007E7919 /* PiDynamicHeightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiDynamicHeightTableViewCell.h; sourceTree = "<group>"; };
+		E932DF8E1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiDynamicHeightTableViewCell.m; sourceTree = "<group>"; };
 		E9498E4A18F15952006A1AD1 /* PiPostTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiPostTweetViewController.h; sourceTree = "<group>"; };
 		E9498E4B18F15952006A1AD1 /* PiPostTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiPostTweetViewController.m; sourceTree = "<group>"; };
 		E951139918F065DB00187EC0 /* Pi-LotApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pi-LotApp.h"; path = "Pi-LOT/Pi-LotApp.h"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				E9F2A50F18ED92550084FCE6 /* PiTimeLineViewController.m */,
 				E9F2A50918ED901F0084FCE6 /* PiTimeLineTableViewCell.h */,
 				E98000A018FE1CC100EF9F55 /* PiTimeLineTableViewCell.m */,
+				E932DF8D1908EBE8007E7919 /* PiDynamicHeightTableViewCell.h */,
+				E932DF8E1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m */,
 				E9F2A4A418EBF21C0084FCE6 /* PiAppDelegate.h */,
 				E9F2A4A518EBF21C0084FCE6 /* PiAppDelegate.m */,
 				E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */,
@@ -351,6 +356,7 @@
 				E9F4ABB818F42C660021DDD8 /* PiMessage.m in Sources */,
 				E9F2A4CF18EBF8240084FCE6 /* PiSignInViewController.m in Sources */,
 				E9F2A51018ED92550084FCE6 /* PiTimeLineViewController.m in Sources */,
+				E932DF8F1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m in Sources */,
 				E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */,
 				E9498E4C18F15952006A1AD1 /* PiPostTweetViewController.m in Sources */,
 				E9F2A4D218EBFB3C0084FCE6 /* PiWeibo.m in Sources */,

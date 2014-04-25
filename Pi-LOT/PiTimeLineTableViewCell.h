@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PiWeibo.h"
+#import "PiDynamicHeightTableViewCell.h"
 
-@interface PiTimeLineTableViewCell : UITableViewCell
+@interface PiTimeLineTableViewCell : PiDynamicHeightTableViewCell
 @property (readonly) CGFloat   height;
 - (void)setCellFrom:(PiMessage*)tweet;
 @end

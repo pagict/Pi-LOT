@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "WeiboModels.h"
+#import "PiDynamicHeightTableViewCell.h"
 
-@interface PiCommentTableViewCell : UITableViewCell
+@interface PiCommentTableViewCell : PiDynamicHeightTableViewCell
 @property (readonly, nonatomic) CGFloat height;
 - (void)setCellFrom:(PiMessage*)message;
 @end

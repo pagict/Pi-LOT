@@ -81,7 +81,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PiTimeLineTableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath] init];
-    NSLog(@"%ld", (long)indexPath.row);
     [cell setCellFrom:self.tweetArray[indexPath.row]];
     
     // Configure the cell...

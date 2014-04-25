@@ -14,8 +14,8 @@
 #define kStandardAquaContraintHorizontalMargin 10
 @interface PiCommentTableViewCell ()
 @property (strong, nonatomic) UIImageView *userProfileImageView;
-@property (strong, nonatomic) UITextView *commentTextView;
-@property (strong, nonatomic) UITextView *quotedTextView;
+@property (strong, nonatomic) UILabel *commentLabel;
+@property (strong, nonatomic) UILabel *quotedLabel;
 @property (strong, nonatomic) UILabel *commentUserLabel;
 @end
 
@@ -33,16 +33,14 @@
                                  CGRectMake(58, 10, 242, 30)];
         [self.contentView addSubview:self.commentUserLabel];
 
-        self.commentTextView = [[UITextView alloc] initWithFrame:
+        self.commentLabel = [[UILabel alloc] initWithFrame:
                                 CGRectMake(58, 49, 242, 60)];
-        self.commentTextView.editable = NO;
-        [self.contentView addSubview:self.commentTextView];
+        [self.contentView addSubview:self.commentLabel];
 
-        self.quotedTextView = [[UITextView alloc] initWithFrame:
+        self.quotedLabel = [[UILabel alloc] initWithFrame:
                                CGRectMake(58, 117, 242, 69)];
-        self.quotedTextView.backgroundColor = [UIColor grayColor];
-        self.quotedTextView.editable = NO;
-        [self.contentView addSubview:self.quotedTextView];
+        self.quotedLabel.backgroundColor = [UIColor lightGrayColor];
+        [self.contentView addSubview:self.quotedLabel];
     }
     return self;
 }
@@ -55,21 +53,25 @@
                                            self.userProfileImageView.contentMode = UIViewContentModeScaleToFill;
                                            self.userProfileImageView.image = [UIImage imageWithData:data];
                                        }];
-    self.commentTextView.text = comment.commentContent;
-    self.quotedTextView.text =comment.quotedContent;
+    self.commentLabel.text = comment.commentContent;
+    self.quotedLabel.text =comment.quotedContent;
     self.commentUserLabel.text = comment.commentUser.screenName;
 
     // set views size
-    CGFloat commentViewHeight = [self heightOfView:self.commentTextView];
-    CGRect commentViewFrame = self.commentTextView.frame;
+    int commentLines = [self linesOfLabel:self.commentLabel];
+    self.commentLabel.numberOfLines = commentLines;
+    CGFloat commentViewHeight = commentLines * [self lineHeightOfLabel:self.commentLabel];
+    CGRect commentViewFrame = self.commentLabel.frame;
     commentViewFrame.size.height = commentViewHeight;
-    self.commentTextView.frame = commentViewFrame;
+    self.commentLabel.frame = commentViewFrame;
 
-    CGFloat quotedViewHeight = [self heightOfView:self.quotedTextView];
-    CGRect quotedViewFrame = self.quotedTextView.frame;
-    quotedViewFrame.origin.y = self.commentTextView.frame.origin.y + self.commentTextView.frame.size.height + kStandardAquaContraintVerticalSpace;
+    int quotedLines = [self linesOfLabel:self.quotedLabel];
+    self.quotedLabel.numberOfLines = quotedLines;
+    CGFloat quotedViewHeight = [self lineHeightOfLabel:self.quotedLabel]*quotedLines;
+    CGRect quotedViewFrame = self.quotedLabel.frame;
+    quotedViewFrame.origin.y = self.commentLabel.frame.origin.y + self.commentLabel.frame.size.height + kStandardAquaContraintVerticalSpace;
     quotedViewFrame.size.height = quotedViewHeight;
-    self.quotedTextView.frame = quotedViewFrame;
+    self.quotedLabel.frame = quotedViewFrame;
 
     CGRect contentRect = self.contentView.frame;
     contentRect.size.height = self.height;
@@ -100,19 +102,12 @@
     // Configure the view for the selected state
 }
 
-- (CGFloat)heightOfView:(UIView*)view {
-    UITextView* textView = (UITextView*)view;
-    NSDictionary* attri = [textView.attributedText attributesAtIndex:0
-                                                      effectiveRange:nil];
-    CGSize textSize = [textView.text sizeWithAttributes:attri];
-    int lineCount = textSize.width / textView.frame.size.width + 1;
-    return lineCount * textSize.height + 20;
-}
+
 
 - (CGFloat)height {
 //    CGFloat otherHeight = 209 - 66 - 104;
 //    return otherHeight + self.commentTextView.frame.size.height + self.quotedTextView.frame.size.height;
-    return self.quotedTextView.frame.origin.y + self.quotedTextView.frame.size.height + kStandardAquaContraintVerticalMargin;
+    return self.quotedLabel.frame.origin.y + self.quotedLabel.frame.size.height + kStandardAquaContraintVerticalMargin;
 }
 
 @end
