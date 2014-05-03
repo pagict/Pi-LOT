@@ -20,13 +20,11 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-
-- (void)testConnector {
-    NSURLRequest *request = [PiConnector connectURL:@"https://api.weibo.com" parameters:@{@"k1": @"1",
-                                                                                          @"k2": @"2",
-                                                                                          @"k3": @"3"}];
-    NSLog(@"%@",request);
-}
+//
+//- (void)testGetWeiboComment {
+//    NSURLRequest* getRequet = [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/show.json"
+//                                                  parameters:@{@"access_token": ]
+//}
 
 - (void)tearDown
 {

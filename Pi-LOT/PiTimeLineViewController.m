@@ -41,7 +41,7 @@
 
     // table view cell setting
     [self.tableView registerClass:[PiTimeLineTableViewCell class]
-           forCellReuseIdentifier:@"reuseIdentifier"];
+           forCellReuseIdentifier:@"timeLineCell"];
 
     // class variables setting
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
@@ -80,7 +80,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PiTimeLineTableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath] init];
+    PiTimeLineTableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:@"timeLineCell" forIndexPath:indexPath] init];
     [cell setCellFrom:self.tweetArray[indexPath.row]];
     
     // Configure the cell...
@@ -90,10 +90,14 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PiTimeLineTableViewCell* cell = [[tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"] init];
+    PiTimeLineTableViewCell* cell = [[tableView dequeueReusableCellWithIdentifier:@"timeLineCell"] init];
     [cell setCellFrom:self.tweetArray[indexPath.row]];
 
     return cell.height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"goDetailWeiboSegue" sender:nil];
 }
 
 /*

@@ -83,7 +83,7 @@
 
     // picture
     if (tweet.pictureURLArray) {
-        UIImageView* imageView = [self addPictureViewWithArray:tweet.pictureURLArray];
+        UIImageView* imageView = (UIImageView *)[self addPictureViewWithArray:tweet.pictureURLArray];
         frame = self.currentBottomMostView.frame;
         CGRect imageViewFrame = imageView.frame;
         imageViewFrame.origin.x = frame.origin.x;
@@ -162,7 +162,7 @@
     [repostView addSubview:label];
     repostView.frame = label.frame;
     if (retweetedMessage.pictureURLArray) {
-        UIImageView* imageView = [self addPictureViewWithArray:retweetedMessage.pictureURLArray];
+        UIImageView* imageView = (UIImageView *)[self addPictureViewWithArray:retweetedMessage.pictureURLArray];
         CGRect imageViewFrame = imageView.frame;
         imageViewFrame.origin.x = repostView.frame.origin.x;
         imageViewFrame.origin.y = label.frame.origin.y + label.frame.size.height + 2;

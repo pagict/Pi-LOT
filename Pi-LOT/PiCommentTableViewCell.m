@@ -31,15 +31,18 @@
 
         self.commentUserLabel = [[UILabel alloc] initWithFrame:
                                  CGRectMake(58, 10, 242, 30)];
+        self.commentUserLabel.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:self.commentUserLabel];
 
         self.commentLabel = [[UILabel alloc] initWithFrame:
                                 CGRectMake(58, 49, 242, 60)];
+        self.commentLabel.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:self.commentLabel];
 
         self.quotedLabel = [[UILabel alloc] initWithFrame:
                                CGRectMake(58, 117, 242, 69)];
-        self.quotedLabel.backgroundColor = [UIColor lightGrayColor];
+        self.quotedLabel.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+        self.quotedLabel.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:self.quotedLabel];
     }
     return self;
