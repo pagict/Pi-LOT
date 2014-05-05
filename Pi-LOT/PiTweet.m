@@ -44,4 +44,31 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
+
+    [aCoder encodeObject:self.createTime forKey:@"createTime"];
+    [aCoder encodeObject:self.text forKey:@"text"];
+    [aCoder encodeObject:self.source forKey:@"source"];
+    [aCoder encodeInt:self.repostCount forKey:@"repostCount"];
+    [aCoder encodeInt:self.commentCount forKey:@"commentCount"];
+
+    [aCoder encodeObject:self.user forKey:@"user"];
+    [aCoder encodeObject:self.retweetedStatus forKey:@"retweetedStatus"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.createTime = [aDecoder decodeObjectForKey:@"createTime"];
+        self.text = [aDecoder decodeObjectForKey:@"text"];
+        self.source = [aDecoder decodeObjectForKey:@"source"];
+        self.repostCount = [aDecoder decodeIntForKey:@"repostCount"];
+        self.commentCount = [aDecoder decodeIntForKey:@"commentCount"];
+        self.user = [aDecoder decodeObjectForKey:@"user"];
+        self.retweetedStatus = [aDecoder decodeObjectForKey:@"retweetedStatus"];
+    }
+    return self;
+}
+
+
 @end

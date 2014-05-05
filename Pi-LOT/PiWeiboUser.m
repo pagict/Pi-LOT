@@ -25,4 +25,30 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.userId forKey:@"userId"];
+    [aCoder encodeObject:self.screenName forKey:@"screenName"];
+    [aCoder encodeObject:self.location forKey:@"location"];
+    [aCoder encodeObject:self.userDescription forKey:@"userDescription"];
+    [aCoder encodeObject:self.profileImageURL.path forKey:@"profileImageURL"];
+    [aCoder encodeObject:self.gender forKey:@"gender"];
+    [aCoder encodeInteger:self.followersCount forKey:@"followersCount"];
+    [aCoder encodeInteger:self.statusesCount forKey:@"statusesCount"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [ super init]) {
+        self.userId = [aDecoder decodeObjectForKey:@"userId"];
+        self.screenName = [aDecoder decodeObjectForKey:@"screenName"];
+        self.location = [aDecoder decodeObjectForKey:@"location"];
+        self.userDescription = [aDecoder decodeObjectForKey:@"userDescription"];
+        self.profileImageURL = [NSURL URLWithString:(NSString*)[aDecoder decodeObjectForKey:@"profileImageURL"]];
+        self.gender = [aDecoder decodeObjectForKey:@"gender"];
+        self.followersCount = [aDecoder decodeIntegerForKey:@"followersCount"];
+        self.statusesCount = [aDecoder decodeIntegerForKey:@"statusesCount"];
+    }
+    return self;
+}
+
+
 @end

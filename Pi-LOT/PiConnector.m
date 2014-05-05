@@ -8,8 +8,20 @@
 
 #import "PiConnector.h"
 #import "NSString+Weibo.h"
+#import "Pi-LotApp.h"
+#import "Reachability.h"
 
 @implementation PiConnector
++ (BOOL)isNetworkAvailable {
+    BOOL isAvailable = NO;
+    Reachability* r = [Reachability reachabilityForInternetConnection];
+    NetworkStatus status = [r currentReachabilityStatus];
+    if (status != NotReachable) {
+        isAvailable = YES;
+    }
+    return isAvailable;
+}
+
 + (NSURLRequest*)requestGETwithURL:(NSString *)urlString parameters:(NSDictionary *)dict {
     NSMutableURLRequest* request;
 
@@ -27,6 +39,16 @@
     request.HTTPMethod = @"POST";
     request.HTTPBody = [[self stringFromParameterDictionary:dict] dataUsingEncoding:NSStringEncodingConversionAllowLossy];
 
+    return request;
+}
+
++ (NSURLRequest*)requestForAuthorize {
+    NSString *urlString = @"https://api.weibo.com/oauth2/authorize";
+    NSURLRequest *request = [PiConnector requestGETwithURL:urlString
+                                                parameters:@{@"client_id": kAppKey,
+                                                             @"reponse_type": @"code",
+                                                             @"redirect_uri": kRedirectURL,
+                                                             @"display": @"mobile"}];
     return request;
 }
 

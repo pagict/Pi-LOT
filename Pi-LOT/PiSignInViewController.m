@@ -24,7 +24,7 @@
     PiAppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
     self.weibo = appdelegate.weibo;
 
-    [self.webView loadRequest:[self.weibo requestForAuthorize]];
+    [self.webView loadRequest:[PiConnector requestForAuthorize]];
 }
 
 - (void)didReceiveMemoryWarning

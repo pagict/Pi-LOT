@@ -11,4 +11,6 @@
 @interface PiConnector : NSObject
 + (NSURLRequest*)requestGETwithURL:(NSString *)urlString parameters:(NSDictionary *)dict;
 + (NSURLRequest*)requestPOSTwithURL:(NSString*)urlString parameters:(NSDictionary*)dict;
++ (NSURLRequest*)requestForAuthorize;
++ (BOOL)isNetworkAvailable;
 @end

@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PiMessage : NSObject
+@interface PiMessage : NSObject <NSCoding>
 
 @end

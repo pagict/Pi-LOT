@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PiWeiboUser : NSObject
+@interface PiWeiboUser : NSObject <NSCoding>
 @property (strong, nonatomic) NSString*     userId;
 @property (strong, nonatomic) NSString*     screenName;
 @property (strong, nonatomic) NSString*     location;

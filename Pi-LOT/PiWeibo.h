@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSString* accessToken;
 
 - (void)userShow:(PiWeiboUser*)user;
-- (NSURLRequest*)requestForAuthorize;
 - (NSDictionary*)dictionaryOfAccessToken;
 - (NSArray*)updateTweets;
 - (void)postTweet:(NSString*)tweetContent;

@@ -11,10 +11,15 @@
 #import "WeiboModels.h"
 #import "Pi-LotApp.h"
 
-
 #define updateCount 30
 
+@interface PiWeibo ()
+@end
+
 @implementation PiWeibo
+
+
+
 - (id)init {
     if (self = [super init]) {
         self.isAuthenticated = NO;
@@ -48,15 +53,7 @@
     }
 }
 
-- (NSURLRequest*)requestForAuthorize {
-    NSString *urlString = @"https://api.weibo.com/oauth2/authorize";
-    NSURLRequest *request = [PiConnector requestGETwithURL:urlString
-                                                parameters:@{@"client_id": kAppKey,
-                                                             @"reponse_type": @"code",
-                                                             @"redirect_uri": kRedirectURL,
-                                                             @"display": @"mobile"}];
-    return request;
-}
+
 
 - (NSDictionary*)dictionaryOfAccessToken {
     NSMutableURLRequest *request = [[PiConnector requestPOSTwithURL:@"https://api.weibo.com/oauth2/access_token"
@@ -77,76 +74,108 @@
 
 - (NSArray*)updateTweets {
     __block NSMutableArray* modelTweets = [[NSMutableArray alloc] initWithCapacity:updateCount];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
-    NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
-    NSURLRequest *request = [PiConnector requestGETwithURL:urlString
-                                                parameters:@{@"access_token": self.accessToken}];
-   /* [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue currentQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-                                                                                       options:NSJSONReadingMutableContainers
-                                                                                         error:nil];
-                               NSArray* tweets = retDict[@"statuses"];
-                               for (NSDictionary* tweet in tweets) {
-                                   PiTweet* piTweet = [[PiTweet alloc] initWithDictionary:tweet];
-                                   [modelTweets addObject:piTweet];
-                               }
+    if ([PiConnector isNetworkAvailable]) { // network is available, data update from net
+        NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
+        NSURLRequest *request = [PiConnector requestGETwithURL:urlString
+                                                    parameters:@{@"access_token": self.accessToken}];
+        /* [NSURLConnection sendAsynchronousRequest:request
+         queue:[NSOperationQueue currentQueue]
+         completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+         NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+         options:NSJSONReadingMutableContainers
+         error:nil];
+         NSArray* tweets = retDict[@"statuses"];
+         for (NSDictionary* tweet in tweets) {
+         PiTweet* piTweet = [[PiTweet alloc] initWithDictionary:tweet];
+         [modelTweets addObject:piTweet];
+         }
 
-                           }]; */
-    NSData *data = [NSURLConnection sendSynchronousRequest:request
-                                         returningResponse:nil
-                                                     error:nil];
-    NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-                                                            options:NSJSONReadingMutableContainers
-                                                              error:nil];
-    NSArray* tweets = retDict[@"statuses"];
-    for (NSDictionary* tweet in tweets) {
-//        PiTweet* piTweet = ;
-        [modelTweets insertObject:[[PiTweet alloc] initWithJsonDictionary:tweet] atIndex:modelTweets.count] ;
+         }]; */
+        NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                             returningResponse:nil
+                                                         error:nil];
+        NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:NSJSONReadingMutableContainers
+                                                                  error:nil];
+        NSArray* tweets = retDict[@"statuses"];
+        for (NSDictionary* tweet in tweets) {
+            PiTweet* piTweet = [[PiTweet alloc] initWithJsonDictionary:tweet];
+            [modelTweets addObject:piTweet];
+
+            [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:piTweet] forKey:[NSString stringWithFormat:@"tweet%03d", modelTweets.count+1]];
+        }
+    } else {
+        int index = 1;
+        while (index++) {
+            NSString* key = [NSString stringWithFormat:@"tweet%03d", index];
+            if ([userDefaults objectForKey:key]) {
+                PiTweet* data = (PiTweet *)[NSKeyedUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:key]];
+                [modelTweets addObject: data];
+            }
+        }
     }
 
     return modelTweets;
 }
 
 - (void)postTweet:(NSString*)tweetContent {
-    if (tweetContent.length <= 140) {
-        NSString* encodedString = [self urlencode:tweetContent];
-        NSURLRequest* request = [PiConnector requestPOSTwithURL:@"https://api.weibo.com/2/statuses/update.json"
-                                                            parameters:@{@"status": encodedString,
-                                                                         @"access_token": self.accessToken}];
+    if ([PiConnector isNetworkAvailable]) {
+        if (tweetContent.length <= 140) {
+            NSString* encodedString = [self urlencode:tweetContent];
+            NSURLRequest* request = [PiConnector requestPOSTwithURL:@"https://api.weibo.com/2/statuses/update.json"
+                                                         parameters:@{@"status": encodedString,
+                                                                      @"access_token": self.accessToken}];
 
-        [NSURLConnection sendAsynchronousRequest:request
-                                           queue:[NSOperationQueue mainQueue]
-                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            [NSURLConnection sendAsynchronousRequest:request
+                                               queue:[NSOperationQueue mainQueue]
+                                   completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
-                                   NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-                                                                                           options:NSJSONReadingAllowFragments
-                                                                                             error:nil];
+                                       NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                               options:NSJSONReadingAllowFragments
+                                                                                                 error:nil];
 #pragma unused(retDict)
-                               }];
-//        NSData* data = [NSURLConnection sendSynchronousRequest:request
-//                                             returningResponse:nil
-//                                                         error:nil];
-//        NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-//                                                                options:NSJSONReadingAllowFragments
-//                                                                  error:nil];
+                                   }];
+            //        NSData* data = [NSURLConnection sendSynchronousRequest:request
+            //                                             returningResponse:nil
+            //                                                         error:nil];
+            //        NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+            //                                                                options:NSJSONReadingAllowFragments
+            //                                                                  error:nil];
+        }
     }
 }
 
 - (NSArray*)comments {
     NSMutableArray* commentsArray = [[NSMutableArray alloc] init];
-    NSURLRequest* request = [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/timeline.json"
-                                                parameters:@{@"access_token" : self.accessToken}];
-    NSData* data = [NSURLConnection sendSynchronousRequest:request
-                                         returningResponse:nil
-                                                     error:nil];
-    NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-                                                            options:NSJSONReadingAllowFragments
-                                                              error:nil];
-    NSArray* metaComment = retDict[@"comments"];
-    for (NSDictionary* commentDict in metaComment) {
-        [commentsArray addObject:[[PiComment alloc] initWithJsonDictionary:commentDict]];
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([PiConnector isNetworkAvailable]) {
+        NSURLRequest* request = [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/timeline.json"
+                                                    parameters:@{@"access_token" : self.accessToken}];
+        NSData* data = [NSURLConnection sendSynchronousRequest:request
+                                             returningResponse:nil
+                                                         error:nil];
+        NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:NSJSONReadingAllowFragments
+                                                                  error:nil];
+        NSArray* metaComment = retDict[@"comments"];
+        for (NSDictionary* commentDict in metaComment) {
+            PiComment* comment = [[PiComment alloc] initWithJsonDictionary:commentDict];
+            [commentsArray addObject:comment];
+            NSData* commentData = [NSKeyedArchiver archivedDataWithRootObject:comment];
+            [userDefaults setObject:commentData forKey:[NSString stringWithFormat:@"comment%03d", commentsArray.count]];
+        }
+    } else {
+        int index = 1;
+        while (index++) {
+            NSString* key = [NSString stringWithFormat:@"comment%03d",index];
+            if ([userDefaults objectForKey:key]) {
+                PiComment* comment = (PiComment*)[NSKeyedUnarchiver unarchiveObjectWithData:
+                                                  [userDefaults objectForKey:key]];
+                [commentsArray addObject:comment];
+            }
+        }
     }
 
      return commentsArray;

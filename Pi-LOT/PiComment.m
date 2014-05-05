@@ -31,5 +31,29 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.commentTime forKey:@"commentTime"];
+    [aCoder encodeObject:self.commentSource forKey:@"commentSource"];
+    [aCoder encodeObject:self.commentContent forKey:@"commentContent"];
+    [aCoder encodeObject:self.commentUser forKey:@"commentUser"];
+    [aCoder encodeObject:self.quotedTime forKey:@"quotedTime"];
+    [aCoder encodeObject:self.quotedSource forKey:@"quotedSource"];
+    [aCoder encodeObject:self.quotedContent forKey:@"quotedContent"];
+    [aCoder encodeObject:self.quotedUser forKey:@"quotedUser"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.commentTime = [aDecoder decodeObjectForKey:@"commentTime"];
+        self.commentSource = [aDecoder decodeObjectForKey:@"commentSource"];
+        self.commentContent = [aDecoder decodeObjectForKey:@"commentContent"];
+        self.commentUser = [aDecoder decodeObjectForKey:@"commentUser"];
+        self.quotedTime = [aDecoder decodeObjectForKey:@"quoteTime"];
+        self.quotedSource = [aDecoder decodeObjectForKey:@"quotedSource"];
+        self.quotedContent = [aDecoder decodeObjectForKey:@"quotedContent"];
+        self.quotedUser = [aDecoder decodeObjectForKey:@"quotedUser"];
+    }
+    return self;
+}
                               
 @end

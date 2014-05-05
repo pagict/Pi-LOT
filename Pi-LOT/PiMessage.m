@@ -10,4 +10,14 @@
 
 @implementation PiMessage
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+
+    }
+    return self;
+}
+
 @end

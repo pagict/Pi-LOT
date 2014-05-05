@@ -49,15 +49,15 @@
         [self.contentView addSubview:self.tweetTimeField];
 
         self.tweetView = [[UILabel alloc] initWithFrame:CGRectMake(20, 71, 280, 240)];
-        self.tweetView.font = [UIFont systemFontOfSize:15];
+        self.tweetView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         [self.contentView addSubview:self.tweetView];
 
         self.commentsCntField = [[UILabel alloc] initWithFrame:CGRectMake(113, 319, 94, 22)];
-        self.commentsCntField.font = [UIFont systemFontOfSize:13];
+        self.commentsCntField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
         [self.contentView addSubview:self.commentsCntField];
 
         self.repostCntField = [[UILabel alloc] initWithFrame:CGRectMake(215, 319, 85, 22)];
-        self.repostCntField.font = [UIFont systemFontOfSize:13];
+        self.repostCntField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
         [self.contentView addSubview:self.repostCntField];
     }
     return self;
@@ -149,7 +149,7 @@
     /***   label basic setting   ***/
     label.text = [NSString stringWithFormat:@"@%@:%@", retweetedMessage.user.screenName, retweetedMessage.text];
     label.numberOfLines = 0;
-    label.font = [UIFont systemFontOfSize:13];
+    label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     /***  label  Frame setting   ****/
     CGRect labelFrame = label.frame;
     labelFrame.size.width = width;
