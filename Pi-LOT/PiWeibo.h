@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "WeiboModels.h"
 
+#define NOTIFICATION_TWEETS_UPDATED     @"NOTIFICATION_TWEETS_UPDATED"
+#define NOTIFICATION_COMMENTS_UPDATED   @"NOTIFICATION_COMMENTS_UPDATED"
+
+
 @interface PiWeibo : NSObject
 @property BOOL isAuthenticated;
 @property (strong, nonatomic) NSString* code;
@@ -18,5 +22,5 @@
 - (NSDictionary*)dictionaryOfAccessToken;
 - (void)updateTweets;
 - (void)postTweet:(NSString*)tweetContent;
-- (NSArray*)comments;
+- (void)comments;
 @end

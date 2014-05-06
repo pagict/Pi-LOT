@@ -15,5 +15,4 @@
 #define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
 
-#define NOTIFICATION_TWEETS_UPDATED     @"NOTIFICATION_TWEETS_UPDATED"
 #endif

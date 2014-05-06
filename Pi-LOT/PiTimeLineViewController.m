@@ -11,7 +11,6 @@
 #import "PiAppDelegate.h"
 #import "PiWeibo.h"
 #import "PiPostTweetViewController.h"
-#import "Pi-LotApp.h"
 
 @interface PiTimeLineViewController ()
 @property (weak, nonatomic) PiWeibo *weibo;

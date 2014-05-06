@@ -73,7 +73,7 @@
 }
 
 - (void)updateTweets {
-    __block NSMutableArray* modelTweets = [[NSMutableArray alloc] initWithCapacity:updateCount];
+    NSMutableArray* modelTweets = [[NSMutableArray alloc] initWithCapacity:updateCount];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     if ([PiConnector isNetworkAvailable]) { // network is available, data update from net
@@ -121,6 +121,9 @@
                 [modelTweets addObject: data];
             }
         }
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:NOTIFICATION_TWEETS_UPDATED
+         object:modelTweets];
     }
 
     //  return modelTweets;
@@ -153,13 +156,31 @@
     }
 }
 
-- (NSArray*)comments {
+- (void)comments {
     NSMutableArray* commentsArray = [[NSMutableArray alloc] init];
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
     if ([PiConnector isNetworkAvailable]) {
         NSURLRequest* request = [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/timeline.json"
                                                     parameters:@{@"access_token" : self.accessToken}];
-        NSData* data = [NSURLConnection sendSynchronousRequest:request
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[[NSOperationQueue alloc] init]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:NSJSONReadingAllowFragments
+                                                                                             error:nil];
+                                   NSArray* metaComment = retDict[@"comments"];
+                                   for (NSDictionary* commentDict in metaComment) {
+                                       PiComment* comment = [[PiComment alloc] initWithJsonDictionary:commentDict];
+                                       [commentsArray addObject:comment];
+                                       NSData* commentData = [NSKeyedArchiver archivedDataWithRootObject:comment];
+                                       [userDefaults setObject:commentData
+                                                        forKey:[NSString stringWithFormat:@"comment%03d",commentsArray.count]];
+                                   }
+                                   [[NSNotificationCenter defaultCenter]
+                                    postNotificationName:NOTIFICATION_COMMENTS_UPDATED
+                                    object:commentsArray];
+                               }];
+        /*NSData* data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
         NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
@@ -171,7 +192,7 @@
             [commentsArray addObject:comment];
             NSData* commentData = [NSKeyedArchiver archivedDataWithRootObject:comment];
             [userDefaults setObject:commentData forKey:[NSString stringWithFormat:@"comment%03d", commentsArray.count]];
-        }
+        }*/
     } else {
         int index = 1;
         while (index++) {
@@ -182,9 +203,10 @@
                 [commentsArray addObject:comment];
             }
         }
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:NOTIFICATION_COMMENTS_UPDATED
+         object:commentsArray];
     }
-
-     return commentsArray;
 }
 
 

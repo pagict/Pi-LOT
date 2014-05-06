@@ -34,10 +34,15 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(updateMessageArrayWithNotification:)
+     name:NOTIFICATION_COMMENTS_UPDATED
+     object:self.weibo];
     // local variable, singleton PiWeibo instance
     PiAppDelegate* appDelegate = (PiAppDelegate*)[[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
-    self.messageArray = [self.weibo comments];
+    [self.weibo comments];
     self.cellIdentifier = kCommentCellIdentifier;
 
     // table view customized cell register
@@ -52,6 +57,11 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateMessageArrayWithNotification:(NSNotification *)notif {
+    self.messageArray = notif.object;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
