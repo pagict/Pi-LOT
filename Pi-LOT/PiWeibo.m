@@ -72,7 +72,7 @@
     return retDict;
 }
 
-- (NSArray*)updateTweets {
+- (void)updateTweets {
     __block NSMutableArray* modelTweets = [[NSMutableArray alloc] initWithCapacity:updateCount];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
@@ -80,19 +80,25 @@
         NSString *urlString = @"https://api.weibo.com/2/statuses/friends_timeline.json";
         NSURLRequest *request = [PiConnector requestGETwithURL:urlString
                                                     parameters:@{@"access_token": self.accessToken}];
-        /* [NSURLConnection sendAsynchronousRequest:request
-         queue:[NSOperationQueue currentQueue]
-         completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-         NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
-         options:NSJSONReadingMutableContainers
-         error:nil];
-         NSArray* tweets = retDict[@"statuses"];
-         for (NSDictionary* tweet in tweets) {
-         PiTweet* piTweet = [[PiTweet alloc] initWithDictionary:tweet];
-         [modelTweets addObject:piTweet];
-         }
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue currentQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:NSJSONReadingMutableContainers
+                                                                                             error:nil];
+                                   NSArray* tweets = retDict[@"statuses"];
+                                   for (NSDictionary* tweet in tweets) {
+                                       PiTweet* piTweet = [[PiTweet alloc] initWithJsonDictionary:tweet];
+                                       [modelTweets addObject:piTweet];
+                                       [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:piTweet]
+                                                        forKey:[NSString stringWithFormat:@"tweet%03d", modelTweets.count]];
+                                   }
 
-         }]; */
+                                   [[NSNotificationCenter defaultCenter]
+                                    postNotificationName:NOTIFICATION_TWEETS_UPDATED
+                                    object:modelTweets];
+                               }];
+        /*
         NSData *data = [NSURLConnection sendSynchronousRequest:request
                                              returningResponse:nil
                                                          error:nil];
@@ -105,7 +111,7 @@
             [modelTweets addObject:piTweet];
 
             [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:piTweet] forKey:[NSString stringWithFormat:@"tweet%03d", modelTweets.count+1]];
-        }
+        } */
     } else {
         int index = 1;
         while (index++) {
@@ -117,7 +123,7 @@
         }
     }
 
-    return modelTweets;
+    //  return modelTweets;
 }
 
 - (void)postTweet:(NSString*)tweetContent {

@@ -16,7 +16,7 @@
 
 - (void)userShow:(PiWeiboUser*)user;
 - (NSDictionary*)dictionaryOfAccessToken;
-- (NSArray*)updateTweets;
+- (void)updateTweets;
 - (void)postTweet:(NSString*)tweetContent;
 - (NSArray*)comments;
 @end

@@ -14,4 +14,6 @@
 #define kAppSecret @"20efe02cd1e9e61ebb0ab2bc47cb4953"
 #define kRedirectURL @"https://api.weibo.com/oauth2/default.html"
 
+
+#define NOTIFICATION_TWEETS_UPDATED     @"NOTIFICATION_TWEETS_UPDATED"
 #endif

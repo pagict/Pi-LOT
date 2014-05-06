@@ -11,6 +11,7 @@
 #import "PiAppDelegate.h"
 #import "PiWeibo.h"
 #import "PiPostTweetViewController.h"
+#import "Pi-LotApp.h"
 
 @interface PiTimeLineViewController ()
 @property (weak, nonatomic) PiWeibo *weibo;
@@ -47,9 +48,20 @@
     PiAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     self.weibo = appDelegate.weibo;
 
-    self.tweetArray = [self.weibo updateTweets];
-    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(updateTweetArrayWithNotification:)
+     name:NOTIFICATION_TWEETS_UPDATED
+     object:nil];
+
+    [self.weibo updateTweets];
 }
+
+- (void)updateTweetArrayWithNotification:(NSNotification*)notif {
+    self.tweetArray = notif.object;
+    [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
