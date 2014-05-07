@@ -12,6 +12,7 @@
 		E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139A18F07F5C00187EC0 /* weiboLogo.png */; };
 		E951139D18F07F6200187EC0 /* weiboLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139C18F07F6200187EC0 /* weiboLogo@2x.png */; };
 		E98000A118FE1CC100EF9F55 /* PiTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E98000A018FE1CC100EF9F55 /* PiTimeLineTableViewCell.m */; };
+		E9BDADFF191A6F0A009F3F8E /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = E9BDADFE191A6F0A009F3F8E /* README.markdown */; };
 		E9C72CA31916744D00B37DBB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA21916744D00B37DBB /* Reachability.m */; };
 		E9C72CA61916749F00B37DBB /* NSString+Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA51916749F00B37DBB /* NSString+Weibo.m */; };
 		E9C72CA8191674DB00B37DBB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C72CA7191674DB00B37DBB /* SystemConfiguration.framework */; };
@@ -61,6 +62,7 @@
 		E951139A18F07F5C00187EC0 /* weiboLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weiboLogo.png; sourceTree = "<group>"; };
 		E951139C18F07F6200187EC0 /* weiboLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weiboLogo@2x.png"; sourceTree = "<group>"; };
 		E98000A018FE1CC100EF9F55 /* PiTimeLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiTimeLineTableViewCell.m; sourceTree = "<group>"; };
+		E9BDADFE191A6F0A009F3F8E /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E9C72CA11916744D00B37DBB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E9C72CA21916744D00B37DBB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E9C72CA41916749F00B37DBB /* NSString+Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Weibo.h"; path = "Pi-LOT/NSString+Weibo.h"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		E9F2A48918EBF21C0084FCE6 = {
 			isa = PBXGroup;
 			children = (
+				E9BDADFE191A6F0A009F3F8E /* README.markdown */,
 				E9F2A4D318EBFB550084FCE6 /* Weibo */,
 				E9F2A49B18EBF21C0084FCE6 /* Pi-LOT */,
 				E9F2A4F118EC1C9A0084FCE6 /* Pi-LOT Tests */,
@@ -343,6 +346,7 @@
 				E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */,
 				E9F2A4A018EBF21C0084FCE6 /* InfoPlist.strings in Resources */,
 				E9F2A4A918EBF21C0084FCE6 /* Main.storyboard in Resources */,
+				E9BDADFF191A6F0A009F3F8E /* README.markdown in Resources */,
 				E9F4AB9F18F2DEED0021DDD8 /* messageLogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
