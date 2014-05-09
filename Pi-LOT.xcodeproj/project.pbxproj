@@ -11,6 +11,7 @@
 		E9498E4C18F15952006A1AD1 /* PiPostTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9498E4B18F15952006A1AD1 /* PiPostTweetViewController.m */; };
 		E951139B18F07F5C00187EC0 /* weiboLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139A18F07F5C00187EC0 /* weiboLogo.png */; };
 		E951139D18F07F6200187EC0 /* weiboLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E951139C18F07F6200187EC0 /* weiboLogo@2x.png */; };
+		E97CFB8B191CFBB4008A4078 /* PiTweetDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E97CFB8A191CFBB4008A4078 /* PiTweetDetailTableViewController.m */; };
 		E98000A118FE1CC100EF9F55 /* PiTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E98000A018FE1CC100EF9F55 /* PiTimeLineTableViewCell.m */; };
 		E9BDADFF191A6F0A009F3F8E /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = E9BDADFE191A6F0A009F3F8E /* README.markdown */; };
 		E9C72CA31916744D00B37DBB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA21916744D00B37DBB /* Reachability.m */; };
@@ -61,6 +62,8 @@
 		E951139918F065DB00187EC0 /* Pi-LotApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pi-LotApp.h"; path = "Pi-LOT/Pi-LotApp.h"; sourceTree = "<group>"; };
 		E951139A18F07F5C00187EC0 /* weiboLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weiboLogo.png; sourceTree = "<group>"; };
 		E951139C18F07F6200187EC0 /* weiboLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weiboLogo@2x.png"; sourceTree = "<group>"; };
+		E97CFB89191CFBB4008A4078 /* PiTweetDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiTweetDetailTableViewController.h; sourceTree = "<group>"; };
+		E97CFB8A191CFBB4008A4078 /* PiTweetDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiTweetDetailTableViewController.m; sourceTree = "<group>"; };
 		E98000A018FE1CC100EF9F55 /* PiTimeLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiTimeLineTableViewCell.m; sourceTree = "<group>"; };
 		E9BDADFE191A6F0A009F3F8E /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E9C72CA11916744D00B37DBB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				E932DF8D1908EBE8007E7919 /* PiDynamicHeightTableViewCell.h */,
 				E932DF8E1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m */,
 				E9F2A4A718EBF21C0084FCE6 /* Main.storyboard */,
+				E97CFB89191CFBB4008A4078 /* PiTweetDetailTableViewController.h */,
+				E97CFB8A191CFBB4008A4078 /* PiTweetDetailTableViewController.m */,
 				E9498E4A18F15952006A1AD1 /* PiPostTweetViewController.h */,
 				E9498E4B18F15952006A1AD1 /* PiPostTweetViewController.m */,
 				E9F2A4CD18EBF8240084FCE6 /* PiSignInViewController.h */,
@@ -369,6 +374,7 @@
 				E9F4ABB818F42C660021DDD8 /* PiMessage.m in Sources */,
 				E9F2A4CF18EBF8240084FCE6 /* PiSignInViewController.m in Sources */,
 				E9F2A51018ED92550084FCE6 /* PiTimeLineViewController.m in Sources */,
+				E97CFB8B191CFBB4008A4078 /* PiTweetDetailTableViewController.m in Sources */,
 				E932DF8F1908EBE8007E7919 /* PiDynamicHeightTableViewCell.m in Sources */,
 				E9C72CA61916749F00B37DBB /* NSString+Weibo.m in Sources */,
 				E9F2A4A218EBF21C0084FCE6 /* main.m in Sources */,

@@ -108,9 +108,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"goDetailWeiboSegue" sender:nil];
+    [self performSegueWithIdentifier:@"goTweetDetailTableViewSegue" sender:nil];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"goTweetDetailTableViewSegue"]) {
+        return YES;
+    }
+    return NO;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

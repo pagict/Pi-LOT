@@ -20,6 +20,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="WT4-qt-nhF" kind="push" identifier="goTweetDetailTableViewSegue" id="tQU-aH-Cyc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,6 +35,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS9-v0-81y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1179" y="-179"/>
+        </scene>
+        <!--Pi Tweet Detail Table View Controller - 微博详情-->
+        <scene sceneID="fuL-PE-D8e">
+            <objects>
+                <tableViewController id="WT4-qt-nhF" customClass="PiTweetDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="okx-ge-KkP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bsJ-z0-0GP">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bsJ-z0-0GP" id="vYI-EE-KeW">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WT4-qt-nhF" id="plL-Si-vii"/>
+                            <outlet property="delegate" destination="WT4-qt-nhF" id="IHx-Lz-XIk"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="微博详情" id="dcd-Bc-G8p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JdL-da-qIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="-44"/>
         </scene>
         <!--Pi Post Tweet View Controller - 新微博-->
         <scene sceneID="GPf-qY-sTl">
@@ -74,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb4-Wy-CWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="-687"/>
+            <point key="canvasLocation" x="1663" y="-740"/>
         </scene>
         <!--Pi Sign In View Controller-->
         <scene sceneID="pDY-ey-1t8">
