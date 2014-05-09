@@ -63,7 +63,7 @@
     return self;
 }
 
-- (void)setCellFrom:(PiMessage*)message {
+- (void)setCellFromMessage:(PiMessage*)message {
     PiTweet* tweet = (PiTweet*)message;
     self.userNameField.text = tweet.user.screenName;
     self.tweetTimeField.text = tweet.createTime;

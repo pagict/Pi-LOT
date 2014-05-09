@@ -48,7 +48,7 @@
     return self;
 }
 
-- (void)setCellFrom:(PiMessage *)message {
+- (void)setCellFromMessage:(PiMessage *)message {
     // set text and image view
     PiComment* comment = (PiComment*)message;
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:comment.commentUser.profileImageURL]

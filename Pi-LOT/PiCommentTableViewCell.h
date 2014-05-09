@@ -12,5 +12,5 @@
 
 @interface PiCommentTableViewCell : PiDynamicHeightTableViewCell
 @property (readonly, nonatomic) CGFloat height;
-- (void)setCellFrom:(PiMessage*)message;
+- (void)setCellFromMessage:(PiMessage*)message;
 @end

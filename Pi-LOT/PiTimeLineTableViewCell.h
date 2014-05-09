@@ -12,5 +12,5 @@
 
 @interface PiTimeLineTableViewCell : PiDynamicHeightTableViewCell
 @property (readonly) CGFloat   height;
-- (void)setCellFrom:(PiMessage*)tweet;
+- (void)setCellFromMessage:(PiMessage*)tweet;
 @end
