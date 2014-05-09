@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeiboModels.h"
 
 @interface PiTweetDetailTableViewController : UITableViewController
-
+@property (strong, nonatomic) PiMessage* message;
 @end

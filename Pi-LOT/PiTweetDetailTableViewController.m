@@ -64,16 +64,37 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* reuseIdentifier;
+    UITableViewCell* cell;
     if (indexPath.section == 0) {
         reuseIdentifier = @"weiboCellInTweetDetailView";
+        cell = [[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] init];
+        [(PiTimeLineTableViewCell *)cell setCellFromMessage:self.message];
+    } else {
+
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+
     // Configure the cell...
     
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"微博详情";
+    }
+    else {
+        return @"评论";
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        PiTimeLineTableViewCell* cell = [[self.tableView dequeueReusableCellWithIdentifier:@"weiboCellInTweetDetailView"] init];
+        [cell setCellFromMessage:self.message];
+        return cell.height;
+    }
+    return 0;
+}
 
 /*
 // Override to support conditional editing of the table view.

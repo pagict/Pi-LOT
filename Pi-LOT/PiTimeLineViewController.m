@@ -12,6 +12,8 @@
 #import "PiWeibo.h"
 #import "PiPostTweetViewController.h"
 
+#import "PiTweetDetailTableViewController.h"
+
 @interface PiTimeLineViewController ()
 @property (weak, nonatomic) PiWeibo *weibo;
 @property (strong, nonatomic) NSArray *tweetArray;
@@ -108,7 +110,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"goTweetDetailTableViewSegue" sender:nil];
+    [self performSegueWithIdentifier:@"goTweetDetailTableViewSegue" sender:self.tweetArray[indexPath.row]];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -163,7 +165,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-
+    PiTweetDetailTableViewController* destiController = segue.destinationViewController;
+    destiController.message = sender;
 }
 
 
