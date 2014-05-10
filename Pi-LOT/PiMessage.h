@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PiMessage : NSObject <NSCoding>
-
+@property int64_t messageId;
 @end

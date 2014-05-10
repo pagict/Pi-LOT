@@ -17,6 +17,7 @@
 
 - (id)initWithJsonDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
+        self.messageId  = [dict[@"id"] longLongValue];
         self.createTime = dict[@"created_at"];
         self.text       = dict[@"text"];
         self.isTruncated= [dict[@"truncated"] boolValue];

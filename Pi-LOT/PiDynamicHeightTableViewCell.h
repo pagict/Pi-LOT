@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PiDynamicHeightTableViewCell : UITableViewCell
+@property (readonly, nonatomic) CGFloat height;
 - (NSInteger)linesOfLabel:(UILabel*)label;
 - (CGFloat)lineHeightOfLabel:(UILabel*)label;
 @end

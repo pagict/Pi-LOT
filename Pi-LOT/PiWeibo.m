@@ -209,6 +209,32 @@
     }
 }
 
+- (void)commentOfTweet:(PiTweet *)tweet {
+    if ([PiConnector isNetworkAvailable]) {
+        NSMutableArray *commentsArray = [[NSMutableArray alloc] init];
+        [NSURLConnection sendAsynchronousRequest:
+                                           [PiConnector requestGETwithURL:@"https://api.weibo.com/2/comments/show.json"
+                                                               parameters:@{@"access_token": self.accessToken,
+                                                                            @"id": [NSString stringWithFormat:@"%llu",tweet.messageId]
+                                                                            }]
+                                           queue:[[NSOperationQueue alloc] init]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   NSDictionary* retDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:NSJSONReadingAllowFragments
+                                                                                             error:nil];
+                                   NSArray* metaArray = retDict[@"comments"];
+                                   for (NSDictionary* dict in metaArray) {
+                                       PiComment* c = [[PiComment alloc] initWithJsonDictionary:dict];
+                                       [commentsArray addObject:c];
+                                   }
+
+                                   [[NSNotificationCenter defaultCenter]
+                                    postNotificationName:NOTIFICATION_COMMENTSOFTWEET_UPDATED
+                                    object:commentsArray];
+                               }];
+    }
+}
+
 
 - (NSString *)urlencode:(NSString*)input{
     NSMutableString *output = [NSMutableString string];
@@ -229,5 +255,6 @@
     }
     return output;
 }
+
 
 @end

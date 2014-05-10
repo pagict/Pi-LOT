@@ -11,6 +11,7 @@
 
 #define NOTIFICATION_TWEETS_UPDATED     @"NOTIFICATION_TWEETS_UPDATED"
 #define NOTIFICATION_COMMENTS_UPDATED   @"NOTIFICATION_COMMENTS_UPDATED"
+#define NOTIFICATION_COMMENTSOFTWEET_UPDATED    @"NOTIFICATION_COMMENTSOFTWEET_UPDATED"
 
 
 @interface PiWeibo : NSObject
@@ -23,4 +24,6 @@
 - (void)updateTweets;
 - (void)postTweet:(NSString*)tweetContent;
 - (void)comments;
+
+- (void)commentOfTweet:(PiTweet *)tweet;
 @end

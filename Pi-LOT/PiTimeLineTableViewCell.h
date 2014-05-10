@@ -11,6 +11,5 @@
 #import "PiDynamicHeightTableViewCell.h"
 
 @interface PiTimeLineTableViewCell : PiDynamicHeightTableViewCell
-@property (readonly) CGFloat   height;
 - (void)setCellFromMessage:(PiMessage*)tweet;
 @end

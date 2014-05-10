@@ -8,9 +8,12 @@
 
 #import "PiTweetDetailTableViewController.h"
 #import "PiTimeLineTableViewCell.h"
+#import "PiWeiboDetailCommentTableViewCell.h"
+#import "PiAppDelegate.h"
 
 @interface PiTweetDetailTableViewController ()
-
+@property (strong, atomic) PiWeibo* weibo;
+@property (strong, nonatomic) NSArray* commentsArray;
 @end
 
 @implementation PiTweetDetailTableViewController
@@ -33,8 +36,26 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    PiAppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    self.weibo = delegate.weibo;
+
     [self.tableView registerClass:[PiTimeLineTableViewCell class]
            forCellReuseIdentifier:@"weiboCellInTweetDetailView"];
+    [self.tableView registerClass:[PiWeiboDetailCommentTableViewCell class]
+           forCellReuseIdentifier:@"commentCellInTweetDetailView"];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(updateCommentsOfTweetWithNotification:)
+     name:NOTIFICATION_COMMENTSOFTWEET_UPDATED
+     object:nil];
+
+    [self.weibo commentOfTweet:self.message];
+}
+
+- (void)updateCommentsOfTweetWithNotification:(NSNotification*)notif {
+    self.commentsArray = notif.object;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +79,7 @@
         return 1;
     }
 
-    return 0;
+    return self.commentsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,7 +91,9 @@
         cell = [[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] init];
         [(PiTimeLineTableViewCell *)cell setCellFromMessage:self.message];
     } else {
-
+        reuseIdentifier = @"commentCellInTweetDetailView";
+        cell = [(PiWeiboDetailCommentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] initWithMessage:self.commentsArray[indexPath.row]];
+        [(PiWeiboDetailCommentTableViewCell *)cell setCell];
     }
 
     // Configure the cell...
@@ -92,8 +115,12 @@
         PiTimeLineTableViewCell* cell = [[self.tableView dequeueReusableCellWithIdentifier:@"weiboCellInTweetDetailView"] init];
         [cell setCellFromMessage:self.message];
         return cell.height;
+    } else {
+        PiWeiboDetailCommentTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"commentCellInTweetDetailView"];
+        cell = [cell initWithMessage:self.commentsArray[indexPath.row]];
+        [cell setCell];
+        return cell.height;
     }
-    return 0;
 }
 
 /*
