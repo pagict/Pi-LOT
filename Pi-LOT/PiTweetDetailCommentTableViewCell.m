@@ -1,14 +1,14 @@
 //
-//  PiWeiboDetailCommentTableViewCell.m
+//  PiTweetDetailCommentTableViewCell.m
 //  Pi-LOT
 //
 //  Created by Peng Pagict on 5/9/14.
 //  Copyright (c) 2014 pagict. All rights reserved.
 //
 
-#import "PiWeiboDetailCommentTableViewCell.h"
+#import "PiTweetDetailCommentTableViewCell.h"
 
-@interface PiWeiboDetailCommentTableViewCell ()
+@interface PiTweetDetailCommentTableViewCell ()
 @property (strong, nonatomic) PiComment* commentMessage;
 
 @property (strong, nonatomic) UIImageView* profileView;
@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UILabel* commentContentLabel;
 @end
 
-@implementation PiWeiboDetailCommentTableViewCell
+@implementation PiTweetDetailCommentTableViewCell
 
 /*
 // Only override drawRect: if you perform custom drawing.

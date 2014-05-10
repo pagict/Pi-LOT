@@ -1,5 +1,5 @@
 //
-//  PiWeiboDetailCommentTableViewCell.h
+//  PiTweetDetailCommentTableViewCell.h
 //  Pi-LOT
 //
 //  Created by Peng Pagict on 5/9/14.
@@ -9,7 +9,7 @@
 #import "PiDynamicHeightTableViewCell.h"
 #import "WeiboModels.h"
 
-@interface PiWeiboDetailCommentTableViewCell : PiDynamicHeightTableViewCell
+@interface PiTweetDetailCommentTableViewCell : PiDynamicHeightTableViewCell
 - (instancetype)initWithMessage:(PiMessage*)message;
 - (void)setCell;
 @end

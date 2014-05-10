@@ -8,7 +8,7 @@
 
 #import "PiTweetDetailTableViewController.h"
 #import "PiTimeLineTableViewCell.h"
-#import "PiWeiboDetailCommentTableViewCell.h"
+#import "PiTweetDetailCommentTableViewCell.h"
 #import "PiAppDelegate.h"
 
 @interface PiTweetDetailTableViewController ()
@@ -41,7 +41,7 @@
 
     [self.tableView registerClass:[PiTimeLineTableViewCell class]
            forCellReuseIdentifier:@"weiboCellInTweetDetailView"];
-    [self.tableView registerClass:[PiWeiboDetailCommentTableViewCell class]
+    [self.tableView registerClass:[PiTweetDetailCommentTableViewCell class]
            forCellReuseIdentifier:@"commentCellInTweetDetailView"];
 
     [[NSNotificationCenter defaultCenter]
@@ -92,8 +92,8 @@
         [(PiTimeLineTableViewCell *)cell setCellFromMessage:self.message];
     } else {
         reuseIdentifier = @"commentCellInTweetDetailView";
-        cell = [(PiWeiboDetailCommentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] initWithMessage:self.commentsArray[indexPath.row]];
-        [(PiWeiboDetailCommentTableViewCell *)cell setCell];
+        cell = [(PiTweetDetailCommentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] initWithMessage:self.commentsArray[indexPath.row]];
+        [(PiTweetDetailCommentTableViewCell *)cell setCell];
     }
 
     // Configure the cell...
@@ -116,7 +116,7 @@
         [cell setCellFromMessage:self.message];
         return cell.height;
     } else {
-        PiWeiboDetailCommentTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"commentCellInTweetDetailView"];
+        PiTweetDetailCommentTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"commentCellInTweetDetailView"];
         cell = [cell initWithMessage:self.commentsArray[indexPath.row]];
         [cell setCell];
         return cell.height;
