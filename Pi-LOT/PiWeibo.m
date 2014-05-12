@@ -91,7 +91,7 @@
                                        PiTweet* piTweet = [[PiTweet alloc] initWithJsonDictionary:tweet];
                                        [modelTweets addObject:piTweet];
                                        [userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:piTweet]
-                                                        forKey:[NSString stringWithFormat:@"tweet%03d", modelTweets.count]];
+                                                        forKey:[NSString stringWithFormat:@"tweet%03ul", modelTweets.count]];
                                    }
 
                                    [[NSNotificationCenter defaultCenter]

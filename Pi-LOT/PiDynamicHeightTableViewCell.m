@@ -10,12 +10,8 @@
 
 @implementation PiDynamicHeightTableViewCell
 - (NSInteger)linesOfLabel:(UILabel*)label {
-    NSDictionary* attribute = [label.attributedText attributesAtIndex:0
-                                                       effectiveRange:NULL];
-    CGSize textSize = [label.text sizeWithAttributes:attribute];
-    CGRect frame = label.frame;
-    int lines = textSize.width / frame.size.width + 1;
-    return lines;
+    CGSize textSize = [label.attributedText size];
+    return textSize.width / label.frame.size.width + 1;
 }
 
 - (CGFloat)lineHeightOfLabel:(UILabel*)label {
