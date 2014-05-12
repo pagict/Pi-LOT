@@ -2,7 +2,7 @@
 ##What is it?
 Pi-LOT is a Weibo demo written for iOS out of the reason that I want to introspect how well I acquired the iOS development. 
 
-_So for short, it is a immature iOS project. _
+**So for short, it is a immature iOS project. **
 
 ##Features
 
