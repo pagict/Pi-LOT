@@ -156,7 +156,6 @@
     label.frame = labelFrame;
     labelFrame.size.height = [self lineHeightOfLabel:label] * [self linesOfLabel:label];
     label.frame = labelFrame;
-    [label sizeToFit];
 
     /*** Whole repostView frame setting ***/
     [repostView addSubview:label];
