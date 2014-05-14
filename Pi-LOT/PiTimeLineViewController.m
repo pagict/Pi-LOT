@@ -93,8 +93,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PiTimeLineTableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:@"timeLineCell" forIndexPath:indexPath] init];
-    [cell setCellFromMessage:self.tweetArray[indexPath.row]];
+    PiTimeLineTableViewCell *cell = [(PiTimeLineTableViewCell*)[tableView
+                                                                dequeueReusableCellWithIdentifier:@"timeLineCell"
+                                                                forIndexPath:indexPath] initWithMessage:self.tweetArray[indexPath.row]];
+    [cell updateCell];
     
     // Configure the cell...
     
@@ -103,8 +105,11 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PiTimeLineTableViewCell* cell = [[tableView dequeueReusableCellWithIdentifier:@"timeLineCell"] init];
-    [cell setCellFromMessage:self.tweetArray[indexPath.row]];
+    PiTimeLineTableViewCell *cell = [(PiTimeLineTableViewCell*)[tableView
+                                                                dequeueReusableCellWithIdentifier:@"timeLineCell"]
+                                     initWithMessage:self.tweetArray[indexPath.row]];
+    [cell updateCell];
+
 
     return cell.height;
 }

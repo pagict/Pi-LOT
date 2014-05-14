@@ -17,12 +17,14 @@
 @property (strong, nonatomic) UILabel *commentLabel;
 @property (strong, nonatomic) UILabel *quotedLabel;
 @property (strong, nonatomic) UILabel *commentUserLabel;
+@property (weak, nonatomic) PiMessage* message;
 @end
 
 @implementation PiCommentTableViewCell
 
-- (id)init {
-    if (self = [super init]) {
+- (id)initWithMessage:(PiMessage *)message {
+    if (self = [super initWithMessage:message]) {
+        self.message = message;
         self.userProfileImageView = [[UIImageView alloc] initWithFrame:
                                      CGRectMake(kStandardAquaContraintHorizontalMargin,
                                                 kStandardAquaContraintVerticalMargin,
@@ -48,9 +50,9 @@
     return self;
 }
 
-- (void)setCellFromMessage:(PiMessage *)message {
+- (void)updateCell {
     // set text and image view
-    PiComment* comment = (PiComment*)message;
+    PiComment* comment = (PiComment*)self.message;
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:comment.commentUser.profileImageURL]
                                        queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                            self.userProfileImageView.contentMode = UIViewContentModeScaleToFill;

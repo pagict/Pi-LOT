@@ -10,6 +10,4 @@
 #import "WeiboModels.h"
 
 @interface PiTweetDetailCommentTableViewCell : PiDynamicHeightTableViewCell
-- (instancetype)initWithMessage:(PiMessage*)message;
-- (void)setCell;
 @end

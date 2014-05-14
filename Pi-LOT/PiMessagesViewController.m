@@ -81,16 +81,20 @@ static NSString* kCommentCellIdentifier = @"commentCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PiCommentTableViewCell *cell = [[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath] init];
-    [cell setCellFromMessage:self.messageArray[indexPath.row]];
+    PiCommentTableViewCell *cell = [(PiCommentTableViewCell*)[tableView
+                                                              dequeueReusableCellWithIdentifier:self.cellIdentifier
+                                                              forIndexPath:indexPath] initWithMessage:self.messageArray[indexPath.row]];
+    [cell updateCell];
     
     return cell;
 }
 
 #pragma mark - table view delegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PiCommentTableViewCell* cell = [[tableView dequeueReusableCellWithIdentifier:self.cellIdentifier] init];;
-    [cell setCellFromMessage:self.messageArray[indexPath.row]];
+    PiCommentTableViewCell *cell = [(PiCommentTableViewCell*)[tableView
+                                                              dequeueReusableCellWithIdentifier:self.cellIdentifier]
+                                    initWithMessage:self.messageArray[indexPath.row]];
+    [cell updateCell];
     return cell.height;
 }
 /*

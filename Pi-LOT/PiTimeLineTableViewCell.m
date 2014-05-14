@@ -17,6 +17,8 @@
 @property (strong, nonatomic) UILabel *repostCntField;
 @property (strong, nonatomic) UILabel *commentsCntField;
 @property (weak, nonatomic)   UIView  *currentBottomMostView;
+
+@property (weak, nonatomic) PiTweet* message;
 @end
 
 @implementation PiTimeLineTableViewCell
@@ -29,8 +31,9 @@
     // Configure the view for the selected state
 }
 
-- (id)init {
-    if (self = [super init]) {
+- (id)initWithMessage:(PiMessage *)message {
+    if (self = [super initWithMessage:message]) {
+        self.message = (PiTweet*)message;
         CGRect imageFrame = CGRectMake(20, 10, 52, 53);
         self.profileImageView = [[UIImageView alloc] initWithFrame:imageFrame];
         [self.contentView addSubview:self.profileImageView];
@@ -62,11 +65,16 @@
     }
     return self;
 }
+- (void)updateTimeLabelFromTime:(NSDate*) date {
+    
+}
 
-- (void)setCellFromMessage:(PiMessage*)message {
-    PiTweet* tweet = (PiTweet*)message;
+- (void)updateCell {
+    [super updateCell];
+
+    PiTweet* tweet = (PiTweet*)self.message;
     self.userNameField.text = tweet.user.screenName;
-    self.tweetTimeField.text = tweet.createTime;
+    self.tweetTimeField.text = tweet.createTime.description;
     self.sourceField.text = tweet.source;
 
 //    ((UITextView*)(self.tweetView)).text = tweet.text;

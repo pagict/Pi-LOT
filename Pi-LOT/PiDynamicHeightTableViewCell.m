@@ -8,7 +8,17 @@
 
 #import "PiDynamicHeightTableViewCell.h"
 
+@interface PiDynamicHeightTableViewCell ()
+@end
 @implementation PiDynamicHeightTableViewCell
+- (instancetype)initWithMessage:(PiMessage *)message {
+    if (self = [super init]) {
+    }
+    return self;
+}
+- (void)updateCell {
+    
+}
 - (NSInteger)linesOfLabel:(UILabel*)label {
     CGSize textSize = [label.attributedText size];
     return textSize.width / label.frame.size.width + 1;

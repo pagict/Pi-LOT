@@ -9,12 +9,12 @@
 #import "PiTweetDetailCommentTableViewCell.h"
 
 @interface PiTweetDetailCommentTableViewCell ()
-@property (strong, nonatomic) PiComment* commentMessage;
-
 @property (strong, nonatomic) UIImageView* profileView;
 @property (strong, nonatomic) UILabel* userNameLabel;
 @property (strong, nonatomic) UILabel* commentTimeLabel;
 @property (strong, nonatomic) UILabel* commentContentLabel;
+
+@property (weak, nonatomic) PiComment* message;
 @end
 
 @implementation PiTweetDetailCommentTableViewCell
@@ -29,9 +29,9 @@
 */
 
 - (instancetype)initWithMessage:(PiMessage *)message {
-    if (self = [super init]) {
+    if (self = [super initWithMessage:message]) {
         if ([message isKindOfClass:[PiComment class]]) {
-            self.commentMessage = (PiComment *)message;
+            self.message = (PiComment *)message;
             
             CGRect imageFrame = CGRectMake(10, 10, 45, 45);
             self.profileView = [[UIImageView alloc] initWithFrame:imageFrame];
@@ -55,20 +55,20 @@
 }
 
 
-- (void)setCell {
+- (void)updateCell {
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest
-                                              requestWithURL:self.commentMessage.commentUser.profileImageURL]
+                                              requestWithURL:self.message.commentUser.profileImageURL]
                                        queue:[[NSOperationQueue alloc]
                                               init]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                self.profileView.image = [UIImage imageWithData:data];
                            }];
-    self.userNameLabel.text = self.commentMessage.commentUser.screenName;
+    self.userNameLabel.text = self.message.commentUser.screenName;
     self.userNameLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    self.commentTimeLabel.text = self.commentMessage.commentTime;
+    self.commentTimeLabel.text = self.message.commentTime;
     self.commentTimeLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
     self.commentContentLabel.attributedText = [[NSAttributedString alloc]
-                                               initWithString:self.commentMessage.commentContent
+                                               initWithString:self.message.commentContent
                                                attributes:@{NSFontAttributeName:
                                                                 [[UIFont preferredFontForTextStyle:UIFontTextStyleBody] fontWithSize:14]
                                                             }];

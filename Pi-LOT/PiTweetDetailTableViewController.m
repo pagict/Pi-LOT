@@ -88,12 +88,12 @@
     UITableViewCell* cell;
     if (indexPath.section == 0) {
         reuseIdentifier = @"weiboCellInTweetDetailView";
-        cell = [[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] init];
-        [(PiTimeLineTableViewCell *)cell setCellFromMessage:self.message];
+        cell = [(PiTimeLineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] initWithMessage:self.message];
+        [(PiTimeLineTableViewCell *)cell updateCell];
     } else {
         reuseIdentifier = @"commentCellInTweetDetailView";
         cell = [(PiTweetDetailCommentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath] initWithMessage:self.commentsArray[indexPath.row]];
-        [(PiTweetDetailCommentTableViewCell *)cell setCell];
+        [(PiTweetDetailCommentTableViewCell *)cell updateCell];
     }
 
     // Configure the cell...
@@ -111,16 +111,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PiDynamicHeightTableViewCell* cell;
     if (indexPath.section == 0) {
-        PiTimeLineTableViewCell* cell = [[self.tableView dequeueReusableCellWithIdentifier:@"weiboCellInTweetDetailView"] init];
-        [cell setCellFromMessage:self.message];
-        return cell.height;
+        cell = [(PiTimeLineTableViewCell*)[self.tableView
+                                           dequeueReusableCellWithIdentifier:@"weiboCellInTweetDetailView"] initWithMessage:self.message];
     } else {
-        PiTweetDetailCommentTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"commentCellInTweetDetailView"];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"commentCellInTweetDetailView"];
         cell = [cell initWithMessage:self.commentsArray[indexPath.row]];
-        [cell setCell];
-        return cell.height;
+
     }
+    [cell updateCell];
+    return cell.height;
 }
 
 /*
