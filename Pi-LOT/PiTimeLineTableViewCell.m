@@ -94,7 +94,7 @@
         UIImageView* imageView = (UIImageView *)[self addPictureViewWithArray:tweet.pictureURLArray];
         frame = self.currentBottomMostView.frame;
         CGRect imageViewFrame = imageView.frame;
-        imageViewFrame.origin.x = frame.origin.x;
+        imageViewFrame.origin.x = frame.origin.x + 5;
         imageViewFrame.origin.y = frame.origin.y + frame.size.height + 5;
         imageView.frame = imageViewFrame;
         [self.contentView addSubview:imageView];
@@ -171,7 +171,7 @@
     if (retweetedMessage.pictureURLArray) {
         UIImageView* imageView = (UIImageView *)[self addPictureViewWithArray:retweetedMessage.pictureURLArray];
         CGRect imageViewFrame = imageView.frame;
-        imageViewFrame.origin.x = repostView.frame.origin.x;
+        imageViewFrame.origin.x = repostView.frame.origin.x+5;
         imageViewFrame.origin.y = label.frame.origin.y + label.frame.size.height + 2;
         imageView.frame = imageViewFrame;
         /*** add to whole repostView   ***/
