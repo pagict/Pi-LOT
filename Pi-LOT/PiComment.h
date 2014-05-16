@@ -11,12 +11,12 @@
 #import "PiMessage.h"
 
 @interface PiComment : PiMessage
-@property (strong, nonatomic) NSString* commentTime;
+@property (strong, nonatomic) NSDate* commentTime;
 @property (strong, nonatomic) NSString* commentSource;
 @property (strong, nonatomic) NSString* commentContent;
 @property (strong, nonatomic) PiWeiboUser* commentUser;
 //
-@property (strong, nonatomic) NSString* quotedTime;
+@property (strong, nonatomic) NSDate* quotedTime;
 @property (strong, nonatomic) NSString* quotedSource;
 @property (strong, nonatomic) NSString* quotedContent;
 @property (strong, nonatomic) PiWeiboUser* quotedUser;

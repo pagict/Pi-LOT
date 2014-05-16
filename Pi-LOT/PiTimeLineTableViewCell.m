@@ -65,16 +65,14 @@
     }
     return self;
 }
-- (void)updateTimeLabelFromTime:(NSDate*) date {
-    
-}
+
 
 - (void)updateCell {
     [super updateCell];
 
     PiTweet* tweet = (PiTweet*)self.message;
     self.userNameField.text = tweet.user.screenName;
-    self.tweetTimeField.text = tweet.createTime.description;
+    self.tweetTimeField.text = [tweet.createTime descriptionWithLocale:[NSLocale currentLocale]];
     self.sourceField.text = tweet.source;
 
 //    ((UITextView*)(self.tweetView)).text = tweet.text;

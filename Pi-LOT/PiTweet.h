@@ -13,7 +13,7 @@
 #define kTWEET_CHARACTER_LIMIT   140
 
 @interface PiTweet : PiMessage
-@property (strong, nonatomic) NSDate*     createTime;
+@property (strong, nonatomic) NSDate*       createTime;
 @property (strong, nonatomic) NSString*     text;
 @property (strong, nonatomic) NSString*     source;
 @property BOOL                              isTruncated;

@@ -18,7 +18,12 @@
 - (id)initWithJsonDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         self.messageId  = [dict[@"id"] longLongValue];
-        self.createTime = dict[@"created_at"];
+
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"HKT"];
+        self.createTime = [dateFormatter dateFromString:dict[@"created_at"]];
+
         self.text       = dict[@"text"];
         self.isTruncated= [dict[@"truncated"] boolValue];
         self.user       = [[PiWeiboUser alloc] initWithJsonDictionary: dict[@"user"]];

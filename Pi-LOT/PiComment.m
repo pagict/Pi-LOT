@@ -13,7 +13,10 @@
 
 - (id)initWithJsonDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
-        self.commentTime = dict[@"created_at"];
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+        dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"HKT"];
+        self.commentTime = [dateFormatter dateFromString: dict[@"created_at"]];
         self.commentContent = dict[@"text"];
         self.commentUser = [[PiWeiboUser alloc] initWithJsonDictionary:dict[@"user"]];
         NSString* sourceStr = dict[@"source"];
@@ -23,7 +26,7 @@
         if (!quotedDictionary) {
             quotedDictionary = dict[@"status"];
         }
-        self.quotedTime = quotedDictionary[@"created_at"];
+        self.quotedTime = [dateFormatter dateFromString: quotedDictionary[@"created_at"]];
         self.quotedContent = quotedDictionary[@"text"];
         self.quotedUser = [[PiWeiboUser alloc] initWithJsonDictionary:quotedDictionary[@"user"]];
         self.quotedSource = [quotedDictionary[@"source"] source];

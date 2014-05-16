@@ -65,7 +65,7 @@
                            }];
     self.userNameLabel.text = self.message.commentUser.screenName;
     self.userNameLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    self.commentTimeLabel.text = self.message.commentTime;
+    self.commentTimeLabel.text = [self.message.commentTime descriptionWithLocale:[NSLocale currentLocale]];
     self.commentTimeLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
     self.commentContentLabel.attributedText = [[NSAttributedString alloc]
                                                initWithString:self.message.commentContent
